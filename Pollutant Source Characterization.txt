@@ -1,0 +1,2772 @@
+clear all %Comment after local minima
+convergence
+%% initialization
+swarm_size = 1; % number of the swarm
+particles
+maxIter = 1; % maximum number of
+iterations
+inertia = 1; %velocity factor on
+initial position
+correction_factor = 2; %velocity factor on
+difference
+% set the position of the initial swarm
+Xmax = 20; %maximum distance along X
+axis
+Ymax = 20; %maximum distance along Y
+axis
+Zmax = 1; %maximum distance along z
+axis
+Cmax = 99; %maximum concentration
+for i=1:swarm_size
+swarm(i,1,1) = round((rand()*(Xmax))); % set the
+position of the 1particles in X
+swarm(i,1,2) = round((rand()*(Ymax))); % set the
+position of the 1particles in Y
+swarm(i,1,3) = round((rand()*(Zmax))); % set the
+position of the 1particles in X
+swarm(i,1,4) = round((rand()*(Cmax))); % set the
+concentration of 1particles
+[Date] 110
+swarm(i,1,5) = round((rand()*(Xmax))); % set the
+position of the 2particles in X
+swarm(i,1,6) = round((rand()*(Ymax))); % set the
+position of the 2particles in Y
+swarm(i,1,7) = round((rand()*(Zmax))); % set the
+position of the 2particles in X
+swarm(i,1,8) = round((rand()*(Cmax))); % set the
+concentration of 2particles
+swarm(i,1,9) = round((rand()*(Xmax))); % set the
+position of the 3particles in X
+swarm(i,1,10) = round((rand()*(Ymax))); % set the
+position of the 3particles in Y
+swarm(i,1,11) = round((rand()*(Zmax))); % set the
+position of the 3particles in X
+swarm(i,1,12) = round((rand()*(Cmax))); % set the
+concentration of 3particles
+swarm(i,1,13) = round((rand()*(Xmax))); % set the
+position of the 4particles in X
+swarm(i,1,14) = round((rand()*(Ymax))); % set the
+position of the 4particles in Y
+swarm(i,1,15) = round((rand()*(Zmax))); % set the
+position of the 4particles in X
+swarm(i,1,16) = round((rand()*(Cmax))); % set the
+concentration of 4particles
+swarm(i,1,17) = round((rand()*(Xmax))); % set the
+position of the 5particles in X
+swarm(i,1,18) = round((rand()*(Ymax))); % set the
+position of the 5particles in Y
+swarm(i,1,19) = round((rand()*(Zmax))); % set the
+position of the 5particles in X
+swarm(i,1,20) = round((rand()*(Cmax))); % set the
+concentration of 5particles
+swarm(i,1,21) = round((rand()*(Xmax))); % set the
+position of the 6particles in X
+swarm(i,1,22) = round((rand()*(Ymax))); % set the
+position of the 6particles in Y
+swarm(i,1,23) = round((rand()*(Zmax))); % set the
+position of the 6particles in X
+swarm(i,1,24) = round((rand()*(Cmax))); % set the
+concentration of 6particles
+swarm(i,1,26) = round((rand()*(Xmax))); % set the
+position of the 7particles in X
+swarm(i,1,26) = round((rand()*(Ymax))); % set the
+position of the 7particles in Y
+swarm(i,1,27) = round((rand()*(Zmax))); % set the
+position of the 7particles in X
+[Date] 111
+swarm(i,1,28) = round((rand()*(Cmax))); % set the
+concentration of 7particles
+swarm(i,1,29) = round((rand()*(Xmax))); % set the
+position of the 8particles in X
+swarm(i,1,30) = round((rand()*(Ymax))); % set the
+position of the 8particles in Y
+swarm(i,1,31) = round((rand()*(Zmax))); % set the
+position of the 8particles in X
+swarm(i,1,32) = round((rand()*(Cmax))); % set the
+concentration of 8particles
+swarm(i,1,33) = round((rand()*(Xmax))); % set the
+position of the 9particles in X
+swarm(i,1,34) = round((rand()*(Ymax))); % set the
+position of the 9particles in Y
+swarm(i,1,35) = round((rand()*(Zmax))); % set the
+position of the 9particles in X
+swarm(i,1,36) = round((rand()*(Cmax))); % set the
+concentration of 9particles
+swarm(i,1,37) = round((rand()*(Xmax))); % set the
+position of the 10particles in X
+swarm(i,1,38) = round((rand()*(Ymax))); % set the
+position of the 10particles in Y
+swarm(i,1,39) = round((rand()*(Zmax))); % set the
+position of the 10particles in X
+swarm(i,1,40) = round((rand()*(Cmax))); % set the
+concentration of 10particles
+swarm(i,1,41) = round((rand()*(Xmax))); % set the
+position of the 11particles in X
+swarm(i,1,42) = round((rand()*(Ymax))); % set the
+position of the 11particles in Y
+swarm(i,1,43) = round((rand()*(Zmax))); % set the
+position of the 11particles in X
+swarm(i,1,44) = round((rand()*(Cmax))); % set the
+concentration of 11particles
+swarm(i,1,45) = round((rand()*(Xmax))); % set the
+position of the 12particles in X
+swarm(i,1,46) = round((rand()*(Ymax))); % set the
+position of the 12particles in Y
+swarm(i,1,47) = round((rand()*(Zmax))); % set the
+position of the 12particles in X
+swarm(i,1,48) = round((rand()*(Cmax))); % set the
+concentration of 12particles
+swarm(i,1,49) = round((rand()*(Xmax))); % set the
+position of the 13particles in X
+swarm(i,1,50) = round((rand()*(Ymax))); % set the
+position of the 13particles in Y
+[Date] 112
+swarm(i,1,51) = round((rand()*(Zmax))); % set the
+position of the 13particles in X
+swarm(i,1,52) = round((rand()*(Cmax))); % set the
+concentration of 13particles
+swarm(i,1,53) = round((rand()*(Xmax))); % set the
+position of the 14particles in X
+swarm(i,1,54) = round((rand()*(Ymax))); % set the
+position of the 14particles in Y
+swarm(i,1,55) = round((rand()*(Zmax))); % set the
+position of the 14particles in X
+swarm(i,1,56) = round((rand()*(Cmax))); % set the
+concentration of 14particles
+swarm(i,1,57) = round((rand()*(Xmax))); % set the
+position of the 15particles in X
+swarm(i,1,58) = round((rand()*(Ymax))); % set the
+position of the 15particles in Y
+swarm(i,1,59) = round((rand()*(Zmax))); % set the
+position of the 15particles in X
+swarm(i,1,60) = round((rand()*(Cmax))); % set the
+concentration of 15particles
+swarm(i,1,61) = round((rand()*(Cmax))); % set the
+concentration of 1 200 particles
+swarm(i,1,62) = round((rand()*(Cmax))); % set the
+concentration of 1 400 particles
+swarm(i,1,63) = round((rand()*(Cmax))); % set the
+concentration of 1 600 5particles
+swarm(i,1,64) = round((rand()*(Cmax))); % set the
+concentration of 1 800 5particles
+swarm(i,1,65) = round((rand()*(Cmax))); % set the
+concentration of 2 200 particles
+swarm(i,1,66) = round((rand()*(Cmax))); % set the
+concentration of 2 400 particles
+swarm(i,1,67) = round((rand()*(Cmax))); % set the
+concentration of 2 600 5particles
+swarm(i,1,68) = round((rand()*(Cmax))); % set the
+concentration of 2 800 5particles
+swarm(i,1,69) = round((rand()*(Cmax))); % set the
+concentration of 3 200 particles
+swarm(i,1,70) = round((rand()*(Cmax))); % set the
+concentration of 3 400 particles
+swarm(i,1,71) = round((rand()*(Cmax))); % set the
+concentration of 3 600 5particles
+[Date] 113
+swarm(i,1,72) = round((rand()*(Cmax))); % set the
+concentration of 3 800 5particles
+swarm(i,1,73) = round((rand()*(Cmax))); % set the
+concentration of 4 200 particles
+swarm(i,1,74) = round((rand()*(Cmax))); % set the
+concentration of 4 400 particles
+swarm(i,1,75) = round((rand()*(Cmax))); % set the
+concentration of 4 600 5particles
+swarm(i,1,76) = round((rand()*(Cmax))); % set the
+concentration of 4 800 5particles
+swarm(i,1,77) = round((rand()*(Cmax))); % set the
+concentration of 5 200 particles
+swarm(i,1,78) = round((rand()*(Cmax))); % set the
+concentration of 5 400 particles
+swarm(i,1,79) = round((rand()*(Cmax))); % set the
+concentration of 5 600 5particles
+swarm(i,1,80) = round((rand()*(Cmax))); % set the
+concentration of 5 800 5particles
+swarm(i,1,81) = round((rand()*(Cmax))); % set the
+concentration of 6 200 particles
+swarm(i,1,82) = round((rand()*(Cmax))); % set the
+concentration of 6 400 particles
+swarm(i,1,83) = round((rand()*(Cmax))); % set the
+concentration of 6 600 5particles
+swarm(i,1,84) = round((rand()*(Cmax))); % set the
+concentration of 6 800 5particles
+swarm(i,1,85) = round((rand()*(Cmax))); % set the
+concentration of 7 200 particles
+swarm(i,1,86) = round((rand()*(Cmax))); % set the
+concentration of 7 400 particles
+swarm(i,1,87) = round((rand()*(Cmax))); % set the
+concentration of 7 600 5particles
+swarm(i,1,88) = round((rand()*(Cmax))); % set the
+concentration of 7 800 5particles
+swarm(i,1,89) = round((rand()*(Cmax))); % set the
+concentration of 8 200 particles
+swarm(i,1,90) = round((rand()*(Cmax))); % set the
+concentration of 8 400 particles
+swarm(i,1,91) = round((rand()*(Cmax))); % set the
+concentration of 8 600 5particles
+[Date] 114
+swarm(i,1,92) = round((rand()*(Cmax))); % set the
+concentration of 8 800 5particles
+swarm(i,1,93) = round((rand()*(Cmax))); % set the
+concentration of 9 200 particles
+swarm(i,1,94) = round((rand()*(Cmax))); % set the
+concentration of 9 400 particles
+swarm(i,1,95) = round((rand()*(Cmax))); % set the
+concentration of 9 600 5particles
+swarm(i,1,96) = round((rand()*(Cmax))); % set the
+concentration of 9 800 5particles
+swarm(i,1,97) = round((rand()*(Cmax))); % set the
+concentration of 10 200 particles
+swarm(i,1,98) = round((rand()*(Cmax))); % set the
+concentration of 10 400 particles
+swarm(i,1,99) = round((rand()*(Cmax))); % set the
+concentration of 10 600 5particles
+swarm(i,1,100) = round((rand()*(Cmax))); % set the
+concentration of 10 800 5particles
+swarm(i,1,101) = round((rand()*(Cmax))); % set the
+concentration of 11 200 particles
+swarm(i,1,102) = round((rand()*(Cmax))); % set the
+concentration of 11 400 particles
+swarm(i,1,103) = round((rand()*(Cmax))); % set the
+concentration of 11 600 5particles
+swarm(i,1,104) = round((rand()*(Cmax))); % set the
+concentration of 11 800 5particles
+swarm(i,1,105) = round((rand()*(Cmax))); % set the
+concentration of 12 200 particles
+swarm(i,1,106) = round((rand()*(Cmax))); % set the
+concentration of 12 400 particles
+swarm(i,1,107) = round((rand()*(Cmax))); % set the
+concentration of 12 600 5particles
+swarm(i,1,108) = round((rand()*(Cmax))); % set the
+concentration of 12 800 5particles
+swarm(i,1,109) = round((rand()*(Cmax))); % set the
+concentration of 13 200 particles
+swarm(i,1,110) = round((rand()*(Cmax))); % set the
+concentration of 13 400 particles
+swarm(i,1,111) = round((rand()*(Cmax))); % set the
+concentration of 13 600 5particles
+[Date] 115
+swarm(i,1,112) = round((rand()*(Cmax))); % set the
+concentration of 13 800 5particles
+swarm(i,1,113) = round((rand()*(Cmax))); % set the
+concentration of 14 200 particles
+swarm(i,1,114) = round((rand()*(Cmax))); % set the
+concentration of 14 400 particles
+swarm(i,1,115) = round((rand()*(Cmax))); % set the
+concentration of 14 600 5particles
+swarm(i,1,116) = round((rand()*(Cmax))); % set the
+concentration of 14 800 5particles
+swarm(i,1,117) = round((rand()*(Cmax))); % set the
+concentration of 15 200 particles
+swarm(i,1,118) = round((rand()*(Cmax))); % set the
+concentration of 15 400 particles
+swarm(i,1,119) = round((rand()*(Cmax))); % set the
+concentration of 15 600 5particles
+swarm(i,1,120) = round((rand()*(Cmax))); % set the
+concentration of 15 800 5particles
+end
+%
+swarm(1,1,:)= swarmc(1,1,:);
+swarm(:,2,:) = 0; % set initial velocity
+for particles
+swarm(:,4,1) = 1000000000; % set the best
+value so far
+plotObjFcn = 1; % set to zero if you do
+not need a final plot
+%Read Rf obs file
+ fclose all ;
+ fileID = fopen('MT3D001BASE.OBS','r');
+ for i = 1:45
+ Fobs1r = fgets(fileID);
+ end
+ locobs1r = str2num(Fobs1r);
+ locobs1r = locobs1r + 0.00001 ;
+
+ fileID = fopen('MT3D001BASE.OBS','r');
+ for i = 1:88
+ Fobs2r = fgets(fileID);
+ end
+[Date] 116
+ locobs2r = str2num(Fobs2r);
+ locobs2r = locobs2r + 0.00001 ;
+
+ fileID = fopen('MT3D001BASE.OBS','r');
+ for i = 1:131
+ Fobs3r = fgets(fileID);
+ end
+ locobs3r = str2num(Fobs3r);
+
+ fileID = fopen('MT3D001BASE.OBS','r');
+ for i = 1:174
+ Fobs4r = fgets(fileID);
+ end
+ locobs4r = str2num(Fobs4r);
+
+ fileID = fopen('MT3D001BASE.OBS','r');
+ for i = 1:217
+ Fobs5r = fgets(fileID);
+ end
+ locobs5r = str2num(Fobs5r);
+
+
+%Read SSM file unchanged data
+fclose all ;
+fileID = fopen('BASE1.ssm','r');
+ A = fgets(fileID);
+ B = fgets(fileID);
+ C = fgets(fileID);
+ D = fgets(fileID);
+ E = fgets(fileID);
+
+F1 = fgets(fileID);
+F2 = fgets(fileID);
+F3 = fgets(fileID);
+F4 = fgets(fileID);
+F5 = fgets(fileID);
+F6 = fgets(fileID);
+F7 = fgets(fileID);
+F8 = fgets(fileID);
+F9 = fgets(fileID);
+F10 = fgets(fileID);
+F11 = fgets(fileID);
+F12 = fgets(fileID);
+F13 = fgets(fileID);
+[Date] 117
+F14 = fgets(fileID);
+F15 = fgets(fileID);
+F = fgets(fileID);
+G = fgets(fileID);
+F21 = fgets(fileID);
+F22 = fgets(fileID);
+F23 = fgets(fileID);
+F24 = fgets(fileID);
+F25 = fgets(fileID);
+F26 = fgets(fileID);
+F27 = fgets(fileID);
+F28 = fgets(fileID);
+F29 = fgets(fileID);
+F210 = fgets(fileID);
+F211 = fgets(fileID);
+F212 = fgets(fileID);
+F213 = fgets(fileID);
+F214 = fgets(fileID);
+F215 = fgets(fileID);
+F = fgets(fileID);
+G = fgets(fileID);
+F31 = fgets(fileID);
+F32 = fgets(fileID);
+F33 = fgets(fileID);
+F34 = fgets(fileID);
+F35 = fgets(fileID);
+F36 = fgets(fileID);
+F37 = fgets(fileID);
+F38 = fgets(fileID);
+F39 = fgets(fileID);
+F310 = fgets(fileID);
+F311 = fgets(fileID);
+F312 = fgets(fileID);
+F313 = fgets(fileID);
+F314 = fgets(fileID);
+F315 = fgets(fileID);
+F = fgets(fileID);
+G = fgets(fileID);
+F41 = fgets(fileID);
+[Date] 118
+F42 = fgets(fileID);
+F43 = fgets(fileID);
+F44 = fgets(fileID);
+F45 = fgets(fileID);
+F46 = fgets(fileID);
+F47 = fgets(fileID);
+F48 = fgets(fileID);
+F49 = fgets(fileID);
+F410 = fgets(fileID);
+F411 = fgets(fileID);
+F412 = fgets(fileID);
+F413 = fgets(fileID);
+F414 = fgets(fileID);
+F415 = fgets(fileID);
+F = fgets(fileID);
+G = fgets(fileID);
+F51 = fgets(fileID);
+F52 = fgets(fileID);
+F53 = fgets(fileID);
+F54 = fgets(fileID);
+F55 = fgets(fileID);
+F56 = fgets(fileID);
+F57 = fgets(fileID);
+F58 = fgets(fileID);
+F59 = fgets(fileID);
+F510 = fgets(fileID);
+F511 = fgets(fileID);
+F512 = fgets(fileID);
+F513 = fgets(fileID);
+F514 = fgets(fileID);
+F515 = fgets(fileID);
+locssm1 = str2num(F1);
+locssm2 = str2num(F2);
+locssm3 = str2num(F3);
+locssm4 = str2num(F4);
+locssm5 = str2num(F5);
+locssm6 = str2num(F6);
+locssm7 = str2num(F7);
+locssm8 = str2num(F8);
+locssm9 = str2num(F9);
+locssm10 = str2num(F10);
+locssm11 = str2num(F11);
+locssm12 = str2num(F12);
+[Date] 119
+locssm13 = str2num(F13);
+locssm14 = str2num(F14);
+locssm15 = str2num(F15);
+locssm21 = str2num(F21);
+locssm22 = str2num(F22);
+locssm23 = str2num(F23);
+locssm24 = str2num(F24);
+locssm25 = str2num(F25);
+locssm26 = str2num(F26);
+locssm27 = str2num(F27);
+locssm28 = str2num(F28);
+locssm29 = str2num(F29);
+locssm210 = str2num(F210);
+locssm211 = str2num(F211);
+locssm212 = str2num(F212);
+locssm213 = str2num(F213);
+locssm214 = str2num(F214);
+locssm215 = str2num(F215);
+locssm31 = str2num(F31);
+locssm32 = str2num(F32);
+locssm33 = str2num(F33);
+locssm34 = str2num(F34);
+locssm35 = str2num(F35);
+locssm36 = str2num(F36)
+;
+locssm37 = str2num(F37);
+locssm38 = str2num(F38);
+locssm39 = str2num(F39);
+locssm310 = str2num(F310);
+locssm311 = str2num(F311);
+locssm312 = str2num(F312);
+locssm313 = str2num(F313);
+locssm314 = str2num(F314);
+locssm315 = str2num(F315);
+locssm41 = str2num(F41);
+locssm42 = str2num(F42);
+locssm43 = str2num(F43);
+locssm44 = str2num(F44);
+locssm45 = str2num(F45);
+locssm46 = str2num(F46);
+locssm47 = str2num(F47);
+locssm48 = str2num(F48);
+locssm49 = str2num(F49);
+locssm410 = str2num(F410);
+locssm411 = str2num(F411);
+locssm412 = str2num(F412);
+locssm413 = str2num(F413);
+locssm414 = str2num(F414);
+[Date] 120
+locssm415 = str2num(F415);
+locssm51 = str2num(F51);
+locssm52 = str2num(F52);
+locssm53 = str2num(F53);
+locssm54 = str2num(F54);
+locssm55 = str2num(F55);
+locssm56 = str2num(F56);
+locssm57 = str2num(F57);
+locssm58 = str2num(F58);
+locssm59 = str2num(F59);
+locssm510 = str2num(F510);
+locssm511 = str2num(F511);
+locssm512 = str2num(F512);
+locssm513 = str2num(F513);
+locssm514 = str2num(F514);
+locssm515 = str2num(F515);
+for iter = 1:maxIter
+%% objective funcion
+%% The main loop of PSO
+ swarm(:, 1, 1) = round(swarm(:, 1, 1) + swarm(:, 2, 1)/1.3);
+%update x position with the velocity
+ swarm(:, 1, 2) = round(swarm(:, 1, 2) + swarm(:, 2, 2)/1.3);
+%update y position with the velocity
+ swarm(:, 1, 3) = round(swarm(:, 1, 3) + swarm(:, 2, 3)/1.3);
+%update Z position with the velocity
+ swarm(:, 1, 4) = (swarm(:, 1, 4) + swarm(:, 2, 4)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 5) = round(swarm(:, 1, 5) + swarm(:, 2, 5)/1.3);
+%update x position with the velocity
+ swarm(:, 1, 6) = round(swarm(:, 1, 6) + swarm(:, 2, 6)/1.3);
+%update y position with the velocity
+ swarm(:, 1, 7) = round(swarm(:, 1, 7) + swarm(:, 2, 7)/1.3);
+%update Z position with the velocity
+ swarm(:, 1, 8) = (swarm(:, 1, 8) + swarm(:, 2, 8)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 9) = round(swarm(:, 1, 9) + swarm(:, 2, 9)/1.3);
+%update x position with the velocity
+ swarm(:, 1, 10) = round(swarm(:, 1, 10) + swarm(:, 2,
+10)/1.3); %update y position with the velocity
+ swarm(:, 1, 11) = round(swarm(:, 1, 11) + swarm(:, 2,
+11)/1.3); %update Z position with the velocity
+ swarm(:, 1, 12) = (swarm(:, 1, 12) + swarm(:, 2, 12)/1.3);
+%update concentration with the velocity
+[Date] 121
+ swarm(:, 1, 13) = round(swarm(:, 1, 13) + swarm(:, 2,
+13)/1.3); %update x position with the velocity
+ swarm(:, 1, 14) = round(swarm(:, 1, 14) + swarm(:, 2,
+14)/1.3); %update y position with the velocity
+ swarm(:, 1, 15) = round(swarm(:, 1, 15) + swarm(:, 2,
+15)/1.3); %update Z position with the velocity
+ swarm(:, 1, 16) = (swarm(:, 1, 16) + swarm(:, 2, 16)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 17) = round(swarm(:, 1, 17) + swarm(:, 2,
+17)/1.3); %update x position with the velocity
+ swarm(:, 1, 18) = round(swarm(:, 1, 18) + swarm(:, 2,
+18)/1.3); %update y position with the velocity
+ swarm(:, 1, 19) = round(swarm(:, 1, 19) + swarm(:, 2,
+19)/1.3); %update Z position with the velocity
+ swarm(:, 1, 20) = (swarm(:, 1, 20) + swarm(:, 2, 20)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 21) = round(swarm(:, 1, 21) + swarm(:, 2,
+21)/1.3); %update x position with the velocity
+ swarm(:, 1, 22) = round(swarm(:, 1, 22) + swarm(:, 2,
+22)/1.3); %update y position with the velocity
+ swarm(:, 1, 23) = round(swarm(:, 1, 23) + swarm(:, 2,
+23)/1.3); %update Z position with the velocity
+ swarm(:, 1, 24) = (swarm(:, 1, 24) + swarm(:, 2, 24)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 25) = round(swarm(:, 1, 25) + swarm(:, 2,
+25)/1.3); %update x position with the velocity
+ swarm(:, 1, 26) = round(swarm(:, 1, 26) + swarm(:, 2,
+26)/1.3); %update y position with the velocity
+ swarm(:, 1, 27) = round(swarm(:, 1, 27) + swarm(:, 2,
+27)/1.3); %update Z position with the velocity
+ swarm(:, 1, 28) = (swarm(:, 1, 28) + swarm(:, 2, 28)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 29) = round(swarm(:, 1, 29) + swarm(:, 2,
+29)/1.3); %update x position with the velocity
+ swarm(:, 1, 30) = round(swarm(:, 1, 30) + swarm(:, 2,
+30)/1.3); %update y position with the velocity
+ swarm(:, 1, 31) = round(swarm(:, 1, 31) + swarm(:, 2,
+31)/1.3); %update Z position with the velocity
+ swarm(:, 1, 32) = (swarm(:, 1, 32) + swarm(:, 2, 32)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 33) = round(swarm(:, 1, 33) + swarm(:, 2,
+33)/1.3); %update x position with the velocity
+ swarm(:, 1, 34) = round(swarm(:, 1, 34) + swarm(:, 2,
+34)/1.3); %update y position with the velocity
+ swarm(:, 1, 35) = round(swarm(:, 1, 35) + swarm(:, 2,
+35)/1.3); %update Z position with the velocity
+[Date] 122
+ swarm(:, 1, 36) = (swarm(:, 1, 36) + swarm(:, 2, 36)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 37) = round(swarm(:, 1, 37) + swarm(:, 2,
+37)/1.3); %update x position with the velocity
+ swarm(:, 1, 38) = round(swarm(:, 1, 38) + swarm(:, 2,
+38)/1.3); %update y position with the velocity
+ swarm(:, 1, 39) = round(swarm(:, 1, 39) + swarm(:, 2,
+39)/1.3); %update Z position with the velocity
+ swarm(:, 1, 40) = (swarm(:, 1, 40) + swarm(:, 2, 40)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 41) = round(swarm(:, 1, 41) + swarm(:, 2,
+41)/1.3); %update x position with the velocity
+ swarm(:, 1, 42) = round(swarm(:, 1, 42) + swarm(:, 2,
+42)/1.3); %update y position with the velocity
+ swarm(:, 1, 43) = round(swarm(:, 1, 43) + swarm(:, 2,
+43)/1.3); %update Z position with the velocity
+ swarm(:, 1, 44) = (swarm(:, 1, 44) + swarm(:, 2, 44)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 45) = round(swarm(:, 1, 45) + swarm(:, 2,
+45)/1.3); %update x position with the velocity
+ swarm(:, 1, 46) = round(swarm(:, 1, 46) + swarm(:, 2,
+46)/1.3); %update y position with the velocity
+ swarm(:, 1, 47) = round(swarm(:, 1, 47) + swarm(:, 2,
+47)/1.3); %update Z position with the velocity
+ swarm(:, 1, 48) = (swarm(:, 1, 48) + swarm(:, 2, 48)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 49) = round(swarm(:, 1, 49) + swarm(:, 2,
+49)/1.3); %update x position with the velocity
+ swarm(:, 1, 50) = round(swarm(:, 1, 50) + swarm(:, 2,
+50)/1.3); %update y position with the velocity
+ swarm(:, 1, 51) = round(swarm(:, 1, 51) + swarm(:, 2,
+51)/1.3); %update Z position with the velocity
+ swarm(:, 1, 52) = (swarm(:, 1, 52) + swarm(:, 2, 52)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 53) = round(swarm(:, 1, 53) + swarm(:, 2,
+53)/1.3); %update x position with the velocity
+ swarm(:, 1, 54) = round(swarm(:, 1, 54) + swarm(:, 2,
+54)/1.3); %update y position with the velocity
+ swarm(:, 1, 55) = round(swarm(:, 1, 55) + swarm(:, 2,
+55)/1.3); %update Z position with the velocity
+ swarm(:, 1, 56) = (swarm(:, 1, 56) + swarm(:, 2, 56)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 57) = round(swarm(:, 1, 57) + swarm(:, 2,
+57)/1.3); %update x position with the velocity
+ swarm(:, 1, 58) = round(swarm(:, 1, 58) + swarm(:, 2,
+58)/1.3); %update y position with the velocity
+[Date] 123
+ swarm(:, 1, 59) = round(swarm(:, 1, 59) + swarm(:, 2,
+59)/1.3); %update Z position with the velocity
+ swarm(:, 1, 60) = (swarm(:, 1, 60) + swarm(:, 2, 60)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 61) = (swarm(:, 1, 61) + swarm(:, 2, 61)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 62) = (swarm(:, 1, 62) + swarm(:, 2, 62)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 63) = (swarm(:, 1, 63) + swarm(:, 2, 63)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 64) = (swarm(:, 1, 64) + swarm(:, 2, 64)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 65) = (swarm(:, 1, 65) + swarm(:, 2, 65)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 66) = (swarm(:, 1, 66) + swarm(:, 2, 66)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 67) = (swarm(:, 1, 67) + swarm(:, 2, 67)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 68) = (swarm(:, 1, 68) + swarm(:, 2, 68)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 69) = (swarm(:, 1, 69) + swarm(:, 2, 69)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 70) = (swarm(:, 1, 70) + swarm(:, 2, 70)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 71) = (swarm(:, 1, 71) + swarm(:, 2, 71)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 72) = (swarm(:, 1, 72) + swarm(:, 2, 72)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 73) = (swarm(:, 1, 73) + swarm(:, 2, 73)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 74) = (swarm(:, 1, 74) + swarm(:, 2, 74)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 75) = (swarm(:, 1, 75) + swarm(:, 2, 75)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 76) = (swarm(:, 1, 76) + swarm(:, 2, 76)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 77) = (swarm(:, 1, 77) + swarm(:, 2, 77)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 78) = (swarm(:, 1, 78) + swarm(:, 2, 78)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 79) = (swarm(:, 1, 79) + swarm(:, 2, 79)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 80) = (swarm(:, 1, 80) + swarm(:, 2, 80)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 81) = (swarm(:, 1, 81) + swarm(:, 2, 81)/1.3);
+%update concentration with the velocity
+[Date] 124
+ swarm(:, 1, 82) = (swarm(:, 1, 82) + swarm(:, 2, 82)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 83) = (swarm(:, 1, 83) + swarm(:, 2, 83)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 84) = (swarm(:, 1, 84) + swarm(:, 2, 84)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 85) = (swarm(:, 1, 85) + swarm(:, 2, 85)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 86) = (swarm(:, 1, 86) + swarm(:, 2, 86)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 87) = (swarm(:, 1, 87) + swarm(:, 2, 87)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 88) = (swarm(:, 1, 88) + swarm(:, 2, 88)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 89) = (swarm(:, 1, 89) + swarm(:, 2, 89)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 90) = (swarm(:, 1, 90) + swarm(:, 2, 90)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 91) = (swarm(:, 1, 91) + swarm(:, 2, 91)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 92) = (swarm(:, 1, 92) + swarm(:, 2, 92)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 93) = (swarm(:, 1, 93) + swarm(:, 2, 93)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 94) = (swarm(:, 1, 94) + swarm(:, 2, 94)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 95) = (swarm(:, 1, 95) + swarm(:, 2, 95)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 96) = (swarm(:, 1, 96) + swarm(:, 2, 96)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 97) = (swarm(:, 1, 97) + swarm(:, 2, 97)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 98) = (swarm(:, 1, 98) + swarm(:, 2, 98)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 99) = (swarm(:, 1, 99) + swarm(:, 2, 99)/1.3);
+%update concentration with the velocity
+ swarm(:, 1, 100) = (swarm(:, 1, 100) + swarm(:, 2,
+100)/1.3); %update concentration with the velocity
+ swarm(:, 1, 101) = (swarm(:, 1, 101) + swarm(:, 2,
+101)/1.3); %update concentration with the velocity
+ swarm(:, 1, 102) = (swarm(:, 1, 102) + swarm(:, 2,
+102)/1.3); %update concentration with the velocity
+ swarm(:, 1, 103) = (swarm(:, 1, 103) + swarm(:, 2,
+103)/1.3); %update concentration with the velocity
+ swarm(:, 1, 104) = (swarm(:, 1, 104) + swarm(:, 2,
+104)/1.3); %update concentration with the velocity
+[Date] 125
+ swarm(:, 1, 105) = (swarm(:, 1, 105) + swarm(:, 2,
+105)/1.3); %update concentration with the velocity
+ swarm(:, 1, 106) = (swarm(:, 1, 106) + swarm(:, 2,
+106)/1.3); %update concentration with the velocity
+ swarm(:, 1, 107) = (swarm(:, 1, 107) + swarm(:, 2,
+107)/1.3); %update concentration with the velocity
+ swarm(:, 1, 108) = (swarm(:, 1, 108) + swarm(:, 2,
+108)/1.3); %update concentration with the velocity
+ swarm(:, 1, 109) = (swarm(:, 1, 109) + swarm(:, 2,
+109)/1.3); %update concentration with the velocity
+ swarm(:, 1, 110) = (swarm(:, 1, 110) + swarm(:, 2,
+110)/1.3); %update concentration with the velocity
+ swarm(:, 1, 111) = (swarm(:, 1, 111) + swarm(:, 2,
+111)/1.3); %update concentration with the velocity
+ swarm(:, 1, 112) = (swarm(:, 1, 112) + swarm(:, 2,
+112)/1.3); %update concentration with the velocity
+ swarm(:, 1, 113) = (swarm(:, 1, 113) + swarm(:, 2,
+113)/1.3); %update concentration with the velocity
+ swarm(:, 1, 114) = (swarm(:, 1, 114) + swarm(:, 2,
+114)/1.3); %update concentration with the velocity
+ swarm(:, 1, 115) = (swarm(:, 1, 115) + swarm(:, 2,
+115)/1.3); %update concentration with the velocity
+ swarm(:, 1, 116) = (swarm(:, 1, 116) + swarm(:, 2,
+116)/1.3); %update concentration with the velocity
+ swarm(:, 1, 117) = (swarm(:, 1, 117) + swarm(:, 2,
+117)/1.3); %update concentration with the velocity
+ swarm(:, 1, 118) = (swarm(:, 1, 118) + swarm(:, 2,
+118)/1.3); %update concentration with the velocity
+ swarm(:, 1, 119) = (swarm(:, 1, 119) + swarm(:, 2,
+119)/1.3); %update concentration with the velocity
+ swarm(:, 1, 120) = (swarm(:, 1, 120) + swarm(:, 2,
+120)/1.3); %update concentration with the velocity
+
+for sn = 1:swarm_size
+for key = 0:14
+ if swarm(sn,1,(4*key)+1) <1
+ swarm(sn,1,(4*key)+1) = 1 ;
+ end
+
+ if swarm(sn,1,(4*key)+1) > Xmax
+ swarm(sn,1,(4*key)+1) = Xmax ;
+ end
+
+ if swarm(sn,1,(4*key)+2) <1
+ swarm(sn,1,(4*key)+2) = 1 ;
+[Date] 126
+ end
+
+ if swarm(sn,1,(4*key)+2) > Ymax
+ swarm(sn,1,(4*key)+2) = Ymax ;
+ end
+
+ if swarm(sn,1,(4*key)+3) <1
+ swarm(sn,1,(4*key)+3) = 1 ;
+ end
+
+ if swarm(sn,1,(4*key)+3) > Zmax
+ swarm(sn,1,(4*key)+3) = Zmax ;
+% swarm(sn,1,(4*key)+3) = 1 ;
+ end
+
+ if swarm(sn,1,(4*key)+4) < 0
+ swarm(sn,1,(4*key)+4) = 0 ;
+ end
+
+ if swarm(sn,1,(4*key)+4) > Cmax
+ swarm(sn,1,(4*key)+4) = Cmax ;
+% swarm(sn,1,(4*key)+4) = 20 ;
+ end
+
+end
+end
+for sn = 1:swarm_size
+for key = 61:120
+
+if swarm(sn,1,key) < 0
+ swarm(sn,1,key) = 0 ;
+ end
+
+if swarm(sn,1,key) > Cmax
+ swarm(sn,1,key) = Cmax ;
+end
+
+end
+end
+for sn = 1:swarm_size
+[Date] 127
+for key = 7:14
+swarm(sn,1,(4*key)+4) = 0 ;
+end
+end
+for sn = 1:swarm_size
+for key = 7:14
+swarm(sn,1,(4*key)+3) = 1;
+end
+end
+for sn = 1:swarm_size
+for key = 7:14
+swarm(sn,1,(4*key)+2) = 1;
+end
+end
+for sn = 1:swarm_size
+for key = 7:14
+swarm(sn,1,(4*key)+1) = 20;
+end
+end
+for sn = 1:swarm_size
+for key = 89:120
+swarm(sn,1,key) = 0;
+end
+end
+ swarm(:, 1, 61) = swarm(:, 1, 62) ;
+ swarm(:, 1, 63) = swarm(:, 1, 64) ;
+ swarm(:, 1, 65) = swarm(:, 1, 66) ;
+ swarm(:, 1, 67) = swarm(:, 1, 68) ;
+ swarm(:, 1, 69) = swarm(:, 1, 70) ;
+ swarm(:, 1, 71) = swarm(:, 1, 72) ;
+ swarm(:, 1, 73) = swarm(:, 1, 74) ;
+ swarm(:, 1, 75) = swarm(:, 1, 76) ;
+ swarm(:, 1, 77) = swarm(:, 1, 78) ;
+ swarm(:, 1, 79) = swarm(:, 1, 80) ;
+ swarm(:, 1, 81) = swarm(:, 1, 82) ;
+ swarm(:, 1, 83) = swarm(:, 1, 84) ;
+ swarm(:, 1, 85) = swarm(:, 1, 86) ;
+ swarm(:, 1, 87) = swarm(:, 1, 88) ;
+[Date] 128
+
+ for ii = 1:swarm_size
+locssm1(1) = swarm(ii, 1, 3);
+locssm1(2) = swarm(ii, 1, 1);
+locssm1(3) = swarm(ii, 1, 2);
+locssm1(4) = swarm(ii, 1, 4);
+locssm2(1) = swarm(ii, 1, 7);
+locssm2(2) = swarm(ii, 1, 5);
+locssm2(3) = swarm(ii, 1, 6);
+locssm2(4) = swarm(ii, 1, 8);
+locssm3(1) = swarm(ii, 1, 11);
+locssm3(2) = swarm(ii, 1, 9);
+locssm3(3) = swarm(ii, 1, 10);
+locssm3(4) = swarm(ii, 1, 12);
+locssm4(1) = swarm(ii, 1, 15);
+locssm4(2) = swarm(ii, 1, 13);
+locssm4(3) = swarm(ii, 1, 14);
+locssm4(4) = swarm(ii, 1, 16);
+locssm5(1) = swarm(ii, 1, 19);
+locssm5(2) = swarm(ii, 1, 17);
+locssm5(3) = swarm(ii, 1, 18);
+locssm5(4) = swarm(ii, 1, 20);
+locssm6(1) = swarm(ii, 1, 23);
+locssm6(2) = swarm(ii, 1, 21);
+locssm6(3) = swarm(ii, 1, 22);
+locssm6(4) = swarm(ii, 1, 24);
+locssm7(1) = swarm(ii, 1, 27);
+locssm7(2) = swarm(ii, 1, 25);
+locssm7(3) = swarm(ii, 1, 26);
+locssm7(4) = swarm(ii, 1, 28);
+locssm8(1) = swarm(ii, 1, 31);
+locssm8(2) = swarm(ii, 1, 29);
+locssm8(3) = swarm(ii, 1, 30);
+locssm8(4) = swarm(ii, 1, 32);
+locssm9(1) = swarm(ii, 1, 35);
+locssm9(2) = swarm(ii, 1, 33);
+locssm9(3) = swarm(ii, 1, 34);
+locssm9(4) = swarm(ii, 1, 36);
+locssm10(1) = swarm(ii, 1, 39);
+locssm10(2) = swarm(ii, 1, 37);
+locssm10(3) = swarm(ii, 1, 38);
+locssm10(4) = swarm(ii, 1, 40);
+locssm11(1) = swarm(ii, 1, 43);
+locssm11(2) = swarm(ii, 1, 41);
+locssm11(3) = swarm(ii, 1, 42);
+locssm11(4) = swarm(ii, 1, 44);
+[Date] 129
+locssm12(1) = swarm(ii, 1, 47);
+locssm12(2) = swarm(ii, 1, 45);
+locssm12(3) = swarm(ii, 1, 46);
+locssm12(4) = swarm(ii, 1, 48);
+locssm13(1) = swarm(ii, 1, 51);
+locssm13(2) = swarm(ii, 1, 49);
+locssm13(3) = swarm(ii, 1, 50);
+locssm13(4) = swarm(ii, 1, 52);
+locssm14(1) = swarm(ii, 1, 55);
+locssm14(2) = swarm(ii, 1, 53);
+locssm14(3) = swarm(ii, 1, 54);
+locssm14(4) = swarm(ii, 1, 56);
+locssm15(1) = swarm(ii, 1, 59);
+locssm15(2) = swarm(ii, 1, 57);
+locssm15(3) = swarm(ii, 1, 58);
+locssm15(4) = swarm(ii, 1, 60);
+locssm1(6) = swarm(ii, 1, 4);
+locssm2(6) = swarm(ii, 1, 8);
+locssm3(6) = swarm(ii, 1, 12);
+locssm4(6) = swarm(ii, 1, 16);
+locssm5(6) = swarm(ii, 1, 20);
+locssm6(6) = swarm(ii, 1, 24);
+locssm7(6) = swarm(ii, 1, 28);
+locssm8(6) = swarm(ii, 1, 32);
+locssm9(6) = swarm(ii, 1, 36);
+locssm10(6) = swarm(ii, 1, 40);
+locssm11(6) = swarm(ii, 1, 44);
+locssm12(6) = swarm(ii, 1, 48);
+locssm13(6) = swarm(ii, 1, 52);
+locssm14(6) = swarm(ii, 1, 56);
+locssm15(6) = swarm(ii, 1, 60);
+locssm21(1) = swarm(ii, 1, 3);
+locssm21(2) = swarm(ii, 1, 1);
+locssm21(3) = swarm(ii, 1, 2);
+locssm21(4) = swarm(ii, 1, 61);
+locssm22(1) = swarm(ii, 1, 7);
+locssm22(2) = swarm(ii, 1, 5);
+locssm22(3) = swarm(ii, 1, 6);
+locssm22(4) = swarm(ii, 1, 65);
+locssm23(1) = swarm(ii, 1, 11);
+locssm23(2) = swarm(ii, 1, 9);
+locssm23(3) = swarm(ii, 1, 10);
+locssm23(4) = swarm(ii, 1, 69);
+locssm24(1) = swarm(ii, 1, 15);
+locssm24(2) = swarm(ii, 1, 13);
+[Date] 130
+locssm24(3) = swarm(ii, 1, 14);
+locssm24(4) = swarm(ii, 1, 73);
+locssm25(1) = swarm(ii, 1, 19);
+locssm25(2) = swarm(ii, 1, 17);
+locssm25(3) = swarm(ii, 1, 18);
+locssm25(4) = swarm(ii, 1, 77);
+locssm26(1) = swarm(ii, 1, 23);
+locssm26(2) = swarm(ii, 1, 21);
+locssm26(3) = swarm(ii, 1, 22);
+locssm26(4) = swarm(ii, 1, 81);
+locssm27(1) = swarm(ii, 1, 27);
+locssm27(2) = swarm(ii, 1, 25);
+locssm27(3) = swarm(ii, 1, 26);
+locssm27(4) = swarm(ii, 1, 85);
+locssm28(1) = swarm(ii, 1, 31);
+locssm28(2) = swarm(ii, 1, 29);
+locssm28(3) = swarm(ii, 1, 30);
+locssm28(4) = swarm(ii, 1, 89);
+locssm29(1) = swarm(ii, 1, 35);
+locssm29(2) = swarm(ii, 1, 33);
+locssm29(3) = swarm(ii, 1, 34);
+locssm29(4) = swarm(ii, 1, 93);
+locssm210(1) = swarm(ii, 1, 39);
+locssm210(2) = swarm(ii, 1, 37);
+locssm210(3) = swarm(ii, 1, 38);
+locssm210(4) = swarm(ii, 1, 97);
+locssm211(1) = swarm(ii, 1, 43);
+locssm211(2) = swarm(ii, 1, 41);
+locssm211(3) = swarm(ii, 1, 42);
+locssm211(4) = swarm(ii, 1, 101);
+locssm212(1) = swarm(ii, 1, 47);
+locssm212(2) = swarm(ii, 1, 45);
+locssm212(3) = swarm(ii, 1, 46);
+locssm212(4) = swarm(ii, 1, 105);
+locssm213(1) = swarm(ii, 1, 51);
+locssm213(2) = swarm(ii, 1, 49);
+locssm213(3) = swarm(ii, 1, 50);
+locssm213(4) = swarm(ii, 1, 109);
+locssm214(1) = swarm(ii, 1, 55);
+locssm214(2) = swarm(ii, 1, 53);
+locssm214(3) = swarm(ii, 1, 54);
+locssm214(4) = swarm(ii, 1, 113);
+locssm215(1) = swarm(ii, 1, 59);
+locssm215(2) = swarm(ii, 1, 57);
+locssm215(3) = swarm(ii, 1, 58);
+locssm215(4) = swarm(ii, 1, 117);
+[Date] 131
+locssm21(6) = swarm(ii, 1,61);
+locssm22(6) = swarm(ii, 1, 65);
+locssm23(6) = swarm(ii, 1, 69);
+locssm24(6) = swarm(ii, 1, 73);
+locssm25(6) = swarm(ii, 1, 77);
+locssm26(6) = swarm(ii, 1, 81);
+locssm27(6) = swarm(ii, 1, 85);
+locssm28(6) = swarm(ii, 1, 89);
+locssm29(6) = swarm(ii, 1, 93);
+locssm210(6) = swarm(ii, 1, 97);
+locssm211(6) = swarm(ii, 1, 101);
+locssm212(6) = swarm(ii, 1, 105);
+locssm213(6) = swarm(ii, 1, 109);
+locssm214(6) = swarm(ii, 1, 113);
+locssm215(6) = swarm(ii, 1, 117);
+locssm31(1) = swarm(ii, 1, 3);
+locssm31(2) = swarm(ii, 1, 1);
+locssm31(3) = swarm(ii, 1, 2);
+locssm31(4) = swarm(ii, 1, 62);
+locssm32(1) = swarm(ii, 1, 7);
+locssm32(2) = swarm(ii, 1, 5);
+locssm32(3) = swarm(ii, 1, 6);
+locssm32(4) = swarm(ii, 1, 66);
+locssm33(1) = swarm(ii, 1, 11);
+locssm33(2) = swarm(ii, 1, 9);
+locssm33(3) = swarm(ii, 1, 10);
+locssm33(4) = swarm(ii, 1, 70);
+locssm34(1) = swarm(ii, 1, 15);
+locssm34(2) = swarm(ii, 1, 13);
+locssm34(3) = swarm(ii, 1, 14);
+locssm34(4) = swarm(ii, 1, 74);
+locssm35(1) = swarm(ii, 1, 19);
+locssm35(2) = swarm(ii, 1, 17);
+locssm35(3) = swarm(ii, 1, 18);
+locssm35(4) = swarm(ii, 1, 78);
+locssm36(1) = swarm(ii, 1, 23);
+locssm36(2) = swarm(ii, 1, 21);
+locssm36(3) = swarm(ii, 1, 22);
+locssm36(4) = swarm(ii, 1, 82);
+locssm37(1) = swarm(ii, 1, 27);
+locssm37(2) = swarm(ii, 1, 25);
+locssm37(3) = swarm(ii, 1, 26);
+locssm37(4) = swarm(ii, 1, 86);
+locssm38(1) = swarm(ii, 1, 31);
+locssm38(2) = swarm(ii, 1, 29);
+[Date] 132
+locssm38(3) = swarm(ii, 1, 30);
+locssm38(4) = swarm(ii, 1, 90);
+locssm39(1) = swarm(ii, 1, 35);
+locssm39(2) = swarm(ii, 1, 33);
+locssm39(3) = swarm(ii, 1, 34);
+locssm39(4) = swarm(ii, 1, 94);
+locssm310(1) = swarm(ii, 1, 39);
+locssm310(2) = swarm(ii, 1, 37);
+locssm310(3) = swarm(ii, 1, 38);
+locssm310(4) = swarm(ii, 1, 98);
+locssm311(1) = swarm(ii, 1, 43);
+locssm311(2) = swarm(ii, 1, 41);
+locssm311(3) = swarm(ii, 1, 42);
+locssm311(4) = swarm(ii, 1, 102);
+locssm312(1) = swarm(ii, 1, 47);
+locssm312(2) = swarm(ii, 1, 45);
+locssm312(3) = swarm(ii, 1, 46);
+locssm312(4) = swarm(ii, 1, 106);
+locssm313(1) = swarm(ii, 1, 51);
+locssm313(2) = swarm(ii, 1, 49);
+locssm313(3) = swarm(ii, 1, 50);
+locssm313(4) = swarm(ii, 1, 110);
+locssm314(1) = swarm(ii, 1, 55);
+locssm314(2) = swarm(ii, 1, 53);
+locssm314(3) = swarm(ii, 1, 54);
+locssm314(4) = swarm(ii, 1, 114);
+locssm315(1) = swarm(ii, 1, 59);
+locssm315(2) = swarm(ii, 1, 57);
+locssm315(3) = swarm(ii, 1, 58);
+locssm315(4) = swarm(ii, 1, 118);
+locssm31(6) = swarm(ii, 1,62);
+locssm32(6) = swarm(ii, 1, 66);
+locssm33(6) = swarm(ii, 1, 70);
+locssm34(6) = swarm(ii, 1, 74);
+locssm35(6) = swarm(ii, 1, 78);
+locssm36(6) = swarm(ii, 1, 82);
+locssm37(6) = swarm(ii, 1, 86);
+locssm38(6) = swarm(ii, 1, 90);
+locssm39(6) = swarm(ii, 1, 94);
+locssm310(6) = swarm(ii, 1, 98);
+locssm311(6) = swarm(ii, 1, 102);
+locssm312(6) = swarm(ii, 1, 106);
+locssm313(6) = swarm(ii, 1, 110);
+locssm314(6) = swarm(ii, 1, 114);
+locssm315(6) = swarm(ii, 1, 118);
+[Date] 133
+locssm41(1) = swarm(ii, 1, 3);
+locssm41(2) = swarm(ii, 1, 1);
+locssm41(3) = swarm(ii, 1, 2);
+locssm41(4) = swarm(ii, 1, 63);
+locssm42(1) = swarm(ii, 1, 7);
+locssm42(2) = swarm(ii, 1, 5);
+locssm42(3) = swarm(ii, 1, 6);
+locssm42(4) = swarm(ii, 1, 67);
+locssm43(1) = swarm(ii, 1, 11)
+;
+locssm43(2) = swarm(ii, 1, 9);
+locssm43(3) = swarm(ii, 1, 10);
+locssm43(4) = swarm(ii, 1, 71);
+locssm44(1) = swarm(ii, 1, 15);
+locssm44(2) = swarm(ii, 1, 13);
+locssm44(3) = swarm(ii, 1, 14);
+locssm44(4) = swarm(ii, 1, 75);
+locssm45(1) = swarm(ii, 1, 19);
+locssm45(2) = swarm(ii, 1, 17);
+locssm45(3) = swarm(ii, 1, 18);
+locssm45(4) = swarm(ii, 1, 79);
+locssm46(1) = swarm(ii, 1, 23);
+locssm46(2) = swarm(ii, 1, 21);
+locssm46(3) = swarm(ii, 1, 22);
+locssm46(4) = swarm(ii, 1, 83);
+locssm47(1) = swarm(ii, 1, 27);
+locssm47(2) = swarm(ii, 1, 25);
+locssm47(3) = swarm(ii, 1, 26);
+locssm47(4) = swarm(ii, 1, 87);
+locssm48(1) = swarm(ii, 1, 31);
+locssm48(2) = swarm(ii, 1, 29);
+locssm48(3) = swarm(ii, 1, 30);
+locssm48(4) = swarm(ii, 1, 91);
+locssm49(1) = swarm(ii, 1, 35);
+locssm49(2) = swarm(ii, 1, 33);
+locssm49(3) = swarm(ii, 1, 34);
+locssm49(4) = swarm(ii, 1, 95);
+locssm410(1) = swarm(ii, 1, 39);
+locssm410(2) = swarm(ii, 1, 37);
+locssm410(3) = swarm(ii, 1, 38);
+locssm410(4) = swarm(ii, 1, 99);
+locssm411(1) = swarm(ii, 1, 43);
+locssm411(2) = swarm(ii, 1, 41);
+locssm411(3) = swarm(ii, 1, 42);
+locssm411(4) = swarm(ii, 1, 103);
+locssm412(1) = swarm(ii, 1, 47);
+locssm412(2) = swarm(ii, 1, 45);
+[Date] 134
+locssm412(3) = swarm(ii, 1, 46);
+locssm412(4) = swarm(ii, 1, 107);
+locssm413(1) = swarm(ii, 1, 51);
+locssm413(2) = swarm(ii, 1, 49);
+locssm413(3) = swarm(ii, 1, 50);
+locssm413(4) = swarm(ii, 1, 111);
+locssm414(1) = swarm(ii, 1, 55);
+locssm414(2) = swarm(ii, 1, 53);
+locssm414(3) = swarm(ii, 1, 54);
+locssm414(4) = swarm(ii, 1, 115);
+locssm415(1) = swarm(ii, 1, 59);
+locssm415(2) = swarm(ii, 1, 57);
+locssm415(3) = swarm(ii, 1, 58);
+locssm415(4) = swarm(ii, 1, 119);
+locssm41(6) = swarm(ii, 1,63);
+locssm42(6) = swarm(ii, 1, 67);
+locssm43(6) = swarm(ii, 1, 71);
+locssm44(6) = swarm(ii, 1, 75);
+locssm45(6) = swarm(ii, 1, 79);
+locssm46(6) = swarm(ii, 1, 83);
+locssm47(6) = swarm(ii, 1, 87);
+locssm48(6) = swarm(ii, 1, 91);
+locssm49(6) = swarm(ii, 1, 95);
+locssm410(6) = swarm(ii, 1, 99);
+locssm411(6) = swarm(ii, 1, 103);
+locssm412(6) = swarm(ii, 1, 107);
+locssm413(6) = swarm(ii, 1, 111);
+locssm414(6) = swarm(ii, 1, 115);
+locssm415(6) = swarm(ii, 1, 119);
+locssm51(1) = swarm(ii, 1, 3);
+locssm51(2) = swarm(ii, 1, 1);
+locssm51(3) = swarm(ii, 1, 2);
+locssm51(4) = swarm(ii, 1, 64);
+locssm52(1) = swarm(ii, 1, 7);
+locssm52(2) = swarm(ii, 1, 5);
+locssm52(3) = swarm(ii, 1, 6);
+locssm52(4) = swarm(ii, 1, 68);
+locssm53(1) = swarm(ii, 1, 11);
+locssm53(2) = swarm(ii, 1, 9);
+locssm53(3) = swarm(ii, 1, 10);
+locssm53(4) = swarm(ii, 1, 72);
+locssm54(1) = swarm(ii, 1, 15);
+locssm54(2) = swarm(ii, 1, 13);
+[Date] 135
+locssm54(3) = swarm(ii, 1, 14);
+locssm54(4) = swarm(ii, 1, 76);
+locssm55(1) = swarm(ii, 1, 19);
+locssm55(2) = swarm(ii, 1, 17);
+locssm55(3) = swarm(ii, 1, 18);
+locssm55(4) = swarm(ii, 1, 80);
+locssm56(1) = swarm(ii, 1, 23);
+locssm56(2) = swarm(ii, 1, 21);
+locssm56(3) = swarm(ii, 1, 22);
+locssm56(4) = swarm(ii, 1, 84);
+locssm57(1) = swarm(ii, 1, 27);
+locssm57(2) = swarm(ii, 1, 25);
+locssm57(3) = swarm(ii, 1, 26);
+locssm57(4) = swarm(ii, 1, 88);
+locssm58(1) = swarm(ii, 1, 31);
+locssm58(2) = swarm(ii, 1, 29);
+locssm58(3) = swarm(ii, 1, 30);
+locssm58(4) = swarm(ii, 1, 92);
+locssm59(1) = swarm(ii, 1, 35);
+locssm59(2) = swarm(ii, 1, 33);
+locssm59(3) = swarm(ii, 1, 34);
+locssm59(4) = swarm(ii, 1, 96);
+locssm510(1) = swarm(ii, 1, 39);
+locssm510(2) = swarm(ii, 1, 37);
+locssm510(3) = swarm(ii, 1, 38);
+locssm510(4) = swarm(ii, 1, 100);
+locssm511(1) = swarm(ii, 1, 43);
+locssm511(2) = swarm(ii, 1, 41);
+locssm511(3) = swarm(ii, 1, 42);
+locssm511(4) = swarm(ii, 1, 104);
+locssm512(1) = swarm(ii, 1, 47);
+locssm512(2) = swarm(ii, 1, 45);
+locssm512(3) = swarm(ii, 1, 46);
+locssm512(4) = swarm(ii, 1, 108);
+locssm513(1) = swarm(ii, 1, 51);
+locssm513(2) = swarm(ii, 1, 49);
+locssm513(3) = swarm(ii, 1, 50);
+locssm513(4) = swarm(ii, 1, 112);
+locssm514(1) = swarm(ii, 1, 55);
+locssm514(2) = swarm(ii, 1, 53);
+locssm514(3) = swarm(ii, 1, 54); locssm514(4) = swarm(ii, 1, 116);
+locssm515(1) = swarm(ii, 1, 59);
+locssm515(2) = swarm(ii, 1, 57);
+locssm515(3) = swarm(ii, 1, 58);
+locssm515(4) = swarm(ii, 1, 120);
+[Date] 136
+locssm51(6) = swarm(ii, 1,64);
+locssm52(6) = swarm(ii, 1, 68);
+locssm53(6) = swarm(ii, 1, 72);
+locssm54(6) = swarm(ii, 1, 76);
+locssm55(6) = swarm(ii, 1, 80);
+locssm56(6) = swarm(ii, 1, 84);
+locssm57(6) = swarm(ii, 1, 88);
+locssm58(6) = swarm(ii, 1, 92);
+locssm59(6) = swarm(ii, 1, 96);
+locssm510(6) = swarm(ii, 1, 100);
+locssm511(6) = swarm(ii, 1, 104);
+locssm512(6) = swarm(ii, 1, 108);
+locssm513(6) = swarm(ii, 1, 112);
+locssm514(6) = swarm(ii, 1, 116);
+locssm515(6) = swarm(ii, 1, 120);
+fclose all ;
+%Write
+fclose all ;
+fileID = fopen('BASE.ssm','w');
+fprintf(fileID, A);
+fprintf(fileID, B);
+ fprintf(fileID, C);
+ fprintf(fileID, D);
+ fprintf(fileID, E);
+
+for i = 1:1
+fprintf(fileID,'%10d',locssm1(1));
+fprintf(fileID,'%10d',locssm1(2));
+fprintf(fileID,'%10d',locssm1(3));
+fprintf(fileID,'%10f',locssm1(4));
+fprintf(fileID,'%10d',locssm1(5));
+fprintf(fileID,'%10f \n',locssm1(6));
+fprintf(fileID,'%10d',locssm2(1));
+fprintf(fileID,'%10d',locssm2(2));
+fprintf(fileID,'%10d',locssm2(3));
+fprintf(fileID,'%10f',locssm2(4));
+fprintf(fileID,'%10d',locssm2(5));
+fprintf(fileID,'%10f \n',locssm2(6));
+[Date] 137
+fprintf(fileID,'%10d',locssm3(1));
+fprintf(fileID,'%10d',locssm3(2));
+fprintf(fileID,'%10d',locssm3(3));
+fprintf(fileID,'%10f',locssm3(4));
+fprintf(fileID,'%10d',locssm3(5));
+fprintf(fileID,'%10f
+\n',locssm3(6));
+fprintf(fileID,'%10d',locssm4(1));
+fprintf(fileID,'%10d',locssm4(2));
+fprintf(fileID,'%10d',locssm4(3));
+fprintf(fileID,'%10f',locssm4(4));
+fprintf(fileID,'%10d',locssm4(5));
+fprintf(fileID,'%10f
+\n',locssm4(6));
+fprintf(fileID,'%10d',locssm5(1));
+fprintf(fileID,'%10d',locssm5(2));
+fprintf(fileID,'%10d',locssm5(3));
+fprintf(fileID,'%10f',locssm5(4));
+fprintf(fileID,'%10d',locssm5(5));
+fprintf(fileID,'%10f
+\n',locssm5(6));
+fprintf(fileID,'%10d',locssm6(1));
+fprintf(fileID,'%10d',locssm6(2));
+fprintf(fileID,'%10d',locssm6(3));
+fprintf(fileID,'%10f',locssm6(4));
+fprintf(fileID,'%10d',locssm6(5));
+fprintf(fileID,'%10f
+\n',locssm6(6));
+fprintf(fileID,'%10d',locssm7(1));
+fprintf(fileID,'%10d',locssm7(2));
+fprintf(fileID,'%10d',locssm7(3))
+;
+fprintf(fileID,'%10f',locssm7(4));
+fprintf(fileID,'%10d',locssm7(5));
+fprintf(fileID,'%10f
+\n',locssm7(6));
+fprintf(fileID,'%10d',locssm8(1));
+fprintf(fileID,'%10d',locssm8(2));
+fprintf(fileID,'%10d',locssm8(3));
+fprintf(fileID,'%10f',locssm8(4));
+fprintf(fileID,'%10d',locssm8(5));
+fprintf(fileID,'%10f
+\n',locssm8(6));
+fprintf(fileID,'%10d',locssm9(1));
+fprintf(fileID,'%10d',locssm9(2));
+fprintf(fileID,'%10d',locssm9(3));
+[Date] 138
+fprintf(fileID,'%10f',locssm9(4));
+fprintf(fileID,'%10d',locssm9(5));
+fprintf(fileID,'%10f \n',locssm9(6));
+fprintf(fileID,'%10d',locssm10(1));
+fprintf(fileID,'%10d',locssm10(2));
+fprintf(fileID,'%10d',locssm10(3));
+fprintf(fileID,'%10f',locssm10(4));
+fprintf(fileID,'%10d',locssm10(5));
+fprintf(fileID,'%10f \n',locssm10(6));
+fprintf(fileID,'%10d',locssm11(1));
+fprintf(fileID,'%10d',locssm11(2));
+fprintf(fileID,'%10d',locssm11(3));
+fprintf(fileID,'%10f',locssm11(4));
+fprintf(fileID,'%10d',locssm11(5));
+fprintf(fileID,'%10f \n',locssm11(6));
+fprintf(fileID,'%10d',locssm12(1));
+fprintf(fileID,'%10d',locssm12(2));
+fprintf(fileID,'%10d',locssm12(3));
+fprintf(fileID,'%10f',locssm12(4));
+fprintf(fileID,'%10d',locssm12(5));
+fprintf(fileID,'%10f \n',locssm12(6));
+fprintf(fileID,'%10d',locssm13(1));
+fprintf(fileID,'%10d',locssm13(2));
+fprintf(fileID,'%10d',locssm13(3));
+fprintf(fileID,'%10f',locssm13(4));
+fprintf(fileID,'%10d',locssm13(5));
+fprintf(fileID,'%10f \n',locssm13(6));
+fprintf(fileID,'%10d',locssm14(1));
+fprintf(fileID,'%10d',locssm14(2));
+fprintf(fileID,'%10d',locssm14(3));
+fprintf(fileID,'%10f',locssm14(4));
+fprintf(fileID,'%10d',locssm14(5));
+fprintf(fileID,'%10f \n',locssm14(6));
+fprintf(fileID,'%10d',locssm15(1));
+fprintf(fileID,'%10d',locssm15(2));
+fprintf(fileID,'%10d',locssm15(3));
+fprintf(fileID,'%10f',locssm15(4));
+fprintf(fileID,'%10d',locssm15(5));
+fprintf(fileID,'%10f \n',locssm15(6));
+[Date] 139
+ fprintf(fileID, F);
+ fprintf(fileID, G);
+
+fprintf(fileID,'%10d',locssm21(1));
+fprintf(fileID,'%10d',locssm21(2));
+fprintf(fileID,'%10d',locssm21(3));
+fprintf(fileID,'%10f',locssm21(4));
+fprintf(fileID,'%10d',locssm21(5));
+fprintf(fileID,'%10f \n',locssm21(6));
+fprintf(fileID,'%10d',locssm22(1));
+fprintf(fileID,'%10d',locssm22(2));
+fprintf(fileID,'%10d',locssm22(3));
+fprintf(fileID,'%10f',locssm22(4));
+fprintf(fileID,'%10d',locssm22(5));
+fprintf(fileID,'%10f \n',locssm22(6));
+fprintf(fileID,'%10d',locssm23(1));
+fprintf(fileID,'%10d',locssm23(2));
+fprintf(fileID,'%10d',locssm23(3));
+fprintf(fileID,'%10f',locssm23(4));
+fprintf(fileID,'%10d',locssm23(5));
+fprintf(fileID,'%10f \n',locssm23(6));
+fprintf(fileID,'%10d',locssm24(1));
+fprintf(fileID,'%10d',locssm24(2));
+fprintf(fileID,'%10d',locssm24(3));
+fprintf(fileID,'%10f',locssm24(4));
+fprintf(fileID,'%10d',locssm24(5));
+fprintf(fileID,'%10f \n',locssm24(6));
+fprintf(fileID,'%10d',locssm25(1));
+fprintf(fileID,'%10d',locssm25(2));
+fprintf(fileID,'%10d',locssm25(3));
+fprintf(fileID,'%10f',locssm25(4));
+fprintf(fileID,'%10d',locssm25(5));
+fprintf(fileID,'%10f \n',locssm25(6));
+fprintf(fileID,'%10d',locssm26(1));
+fprintf(fileID,'%10d',locssm26(2));
+fprintf(fileID,'%10d',locssm26(3));
+[Date] 140
+fprintf(fileID,'%10f',locssm26(4));
+fprintf(fileID,'%10d',locssm26(5));
+fprintf(fileID,'%10f \n',locssm26(6));
+fprintf(fileID,'%10d',locssm27(1));
+fprintf(fileID,'%10d',locssm27(2));
+fprintf(fileID,'%10d',locssm27(3));
+fprintf(fileID,'%10f',locssm27(4));
+fprintf(fileID,'%10d',locssm27(5));
+fprintf(fileID,'%10f \n',locssm27(6));
+fprintf(fileID,'%10d',locssm28(1));
+fprintf(fileID,'%10d',locssm28(2));
+fprintf(fileID,'%10d',locssm28(3));
+fprintf(fileID,'%10f',locssm28(4));
+fprintf(fileID,'%10d',locssm28(5));
+fprintf(fileID,'%10f \n',locssm28(6));
+fprintf(fileID,'%10d',locssm29(1));
+fprintf(fileID,'%10d',locssm29(2));
+fprintf(fileID,'%10d',locssm29(3));
+fprintf(fileID,'%10f',locssm29(4));
+fprintf(fileID,'%10d',locssm29(5));
+fprintf(fileID,'%10f \n',locssm29(6));
+fprintf(fileID,'%10d',locssm210(1));
+fprintf(fileID,'%10d',locssm210(2));
+fprintf(fileID,'%10d',locssm210(3));
+fprintf(fileID,'%10f',locssm210(4));
+fprintf(fileID,'%10d',locssm210(5));
+fprintf(fileID,'%10f \n',locssm210(6));
+fprintf(fileID,'%10d',locssm211(1));
+fprintf(fileID,'%10d',locssm211(2));
+fprintf(fileID,'%10d',locssm211(3));
+fprintf(fileID,'%10f',locssm211(4));
+fprintf(fileID,'%10d',locssm211(5));
+fprintf(fileID,'%10f \n',locssm211(6));
+fprintf(fileID,'%10d',locssm212(1));
+fprintf(fileID,'%10d',locssm212(2));
+fprintf(fileID,'%10d',locssm212(3));
+fprintf(fileID,'%10f',locssm212(4));
+fprintf(fileID,'%10d',locssm212(5));
+fprintf(fileID,'%10f \n',locssm212(6));
+[Date] 141
+fprintf(fileID,'%10d',locssm213(1));
+fprintf(fileID,'%10d',locssm213(2));
+fprintf(fileID,'%10d',locssm213(3));
+fprintf(fileID,'%10f',locssm213(4));
+fprintf(fileID,'%10d',locssm213(5));
+fprintf(fileID,'%10f \n',locssm213(6));
+fprintf(fileID,'%10d',locssm214(1));
+fprintf(fileID,'%10d',locssm214(2));
+fprintf(fileID,'%10d',locssm214(3));
+fprintf(fileID,'%10f',locssm214(4));
+fprintf(fileID,'%10d',locssm214(5));
+fprintf(fileID,'%10f \n',locssm214(6));
+fprintf(fileID,'%10d',locssm215(1));
+fprintf(fileID,'%10d',locssm215(2));
+fprintf(fileID,'%10d',locssm215(3));
+fprintf(fileID,'%10f',locssm215(4));
+fprintf(fileID,'%10d',locssm215(5));
+fprintf(fileID,'%10f \n',locssm215(6));
+ fprintf(fileID, F);
+ fprintf(fileID, G);
+fprintf(fileID,'%10d',locssm31(1));
+fprintf(fileID,'%10d',locssm31(2));
+fprintf(fileID,'%10d',locssm31(3));
+fprintf(fileID,'%10f',locssm31(4));
+fprintf(fileID,'%10d',locssm31(5));
+fprintf(fileID,'%10f \n',locssm31(6));
+fprintf(fileID,'%10d',locssm32(1));
+fprintf(fileID,'%10d',locssm32(2));
+fprintf(fileID,'%10d',locssm32(3));
+fprintf(fileID,'%10f',locssm32(4));
+fprintf(fileID,'%10d',locssm32(5));
+fprintf(fileID,'%10f \n',locssm32(6));
+fprintf(fileID,'%10d',locssm33(1));
+fprintf(fileID,'%10d',locssm33(2));
+fprintf(fileID,'%10d',locssm33(3));
+fprintf(fileID,'%10f',locssm33(4));
+fprintf(fileID,'%10d',locssm33(5));
+[Date] 142
+fprintf(fileID,'%10f \n',locssm33(6));
+fprintf(fileID,'%10d',locssm34(1));
+fprintf(fileID,'%10d',locssm34(2));
+fprintf(fileID,'%10d',locssm34(3));
+fprintf(fileID,'%10f',locssm34(4));
+fprintf(fileID,'%10d',locssm34(5));
+fprintf(fileID,'%10f \n',locssm34(6));
+fprintf(fileID,'%10d',locssm35(1));
+fprintf(fileID,'%10d',locssm35(2));
+fprintf(fileID,'%10d',locssm35(3));
+fprintf(fileID,'%10f',locssm35(4));
+fprintf(fileID,'%10d',locssm35(5));
+fprintf(fileID,'%10f \n',locssm35(6));
+fprintf(fileID,'%10d',locssm36(1));
+fprintf(fileID,'%10d',locssm36(2));
+fprintf(fileID,'%10d',locssm36(3));
+fprintf(fileID,'%10f',locssm36(4));
+fprintf(fileID,'%10d',locssm36(5));
+fprintf(fileID,'%10f \n',locssm36(6));
+fprintf(fileID,'%10d',locssm37(1));
+fprintf(fileID,'%10d',locssm37(2));
+fprintf(fileID,'%10d',locssm37(3));
+fprintf(fileID,'%10f',locssm37(4));
+fprintf(fileID,'%10d',locssm37(5));
+fprintf(fileID,'%10f \n',locssm37(6));
+fprintf(fileID,'%10d',locssm38(1));
+fprintf(fileID,'%10d',locssm38(2));
+fprintf(fileID,'%10d',locssm38(3));
+fprintf(fileID,'%10f',locssm38(4));
+fprintf(fileID,'%10d',locssm38(5));
+fprintf(fileID,'%10f \n',locssm38(6));
+fprintf(fileID,'%10d',locssm39(1));
+fprintf(fileID,'%10d',locssm39(2));
+fprintf(fileID,'%10d',locssm39(3));
+fprintf(fileID,'%10f',locssm39(4));
+fprintf(fileID,'%10d',locssm39(5));
+fprintf(fileID,'%10f \n',locssm39(6));
+fprintf(fileID,'%10d',locssm310(1));
+[Date] 143
+fprintf(fileID,'%10d',locssm310(2));
+fprintf(fileID,'%10d',locssm310(3));
+fprintf(fileID,'%10f',locssm310(4));
+fprintf(fileID,'%10d',locssm310(5));
+fprintf(fileID,'%10f \n',locssm310(6));
+fprintf(fileID,'%10d',locssm311(1));
+fprintf(fileID,'%10d',locssm311(2));
+fprintf(fileID,'%10d',locssm311(3));
+fprintf(fileID,'%10f',locssm311(4));
+fprintf(fileID,'%10d',locssm311(5));
+fprintf(fileID,'%10f \n',locssm311(6));
+fprintf(fileID,'%10d',locssm312(1));
+fprintf(fileID,'%10d',locssm312(2));
+fprintf(fileID,'%10d',locssm312(3));
+fprintf(fileID,'%10f',locssm312(4));
+fprintf(fileID,'%10d',locssm312(5));
+fprintf(fileID,'%10f \n',locssm312(6));
+fprintf(fileID,'%10d',locssm313(1));
+fprintf(fileID,'%10d',locssm313(2));
+fprintf(fileID,'%10d',locssm313(3));
+fprintf(fileID,'%10f',locssm313(4));
+fprintf(fileID,'%10d',locssm313(5));
+fprintf(fileID,'%10f \n',locssm313(6));
+fprintf(fileID,'%10d',locssm314(1));
+fprintf(fileID,'%10d',locssm314(2));
+fprintf(fileID,'%10d',locssm314(3));
+fprintf(fileID,'%10f',locssm314(4));
+fprintf(fileID,'%10d',locssm314(5));
+fprintf(fileID,'%10f \n',locssm314(6));
+fprintf(fileID,'%10d',locssm315(1));
+fprintf(fileID,'%10d',locssm315(2));
+fprintf(fileID,'%10d',locssm315(3));
+fprintf(fileID,'%10f',locssm315(4));
+fprintf(fileID,'%10d',locssm315(5));
+fprintf(fileID,'%10f \n',locssm315(6));
+ fprintf(fileID, F);
+ fprintf(fileID, G);
+fprintf(fileID,'%10d',locssm41(1));
+[Date] 144
+fprintf(fileID,'%10d',locssm41(2));
+fprintf(fileID,'%10d',locssm41(3));
+fprintf(fileID,'%10f',locssm41(4));
+fprintf(fileID,'%10d',locssm41(5));
+fprintf(fileID,'%10f \n',locssm41(6));
+fprintf(fileID,'%10d',locssm42(1));
+fprintf(fileID,'%10d',locssm42(2));
+fprintf(fileID,'%10d',locssm42(3));
+fprintf(fileID,'%10f',locssm42(4));
+fprintf(fileID,'%10d',locssm42(5));
+fprintf(fileID,'%10f \n',locssm42(6));
+fprintf(fileID,'%10d',locssm43(1));
+fprintf(fileID,'%10d',locssm43(2));
+fprintf(fileID,'%10d',locssm43(3));
+fprintf(fileID,'%10f',locssm43(4));
+fprintf(fileID,'%10d',locssm43(5));
+fprintf(fileID,'%10f \n',locssm43(6));
+fprintf(fileID,'%10d',locssm44(1));
+fprintf(fileID,'%10d',locssm44(2));
+fprintf(fileID,'%10d',locssm44(3));
+fprintf(fileID,'%10f',locssm44(4));
+fprintf(fileID,'%10d',locssm44(5));
+fprintf(fileID,'%10f \n',locssm44(6));
+fprintf(fileID,'%10d',locssm45(1));
+fprintf(fileID,'%10d',locssm45(2));
+fprintf(fileID,'%10d',locssm45(3));
+fprintf(fileID,'%10f',locssm45(4));
+fprintf(fileID,'%10d',locssm45(5));
+fprintf(fileID,'%10f \n',locssm45(6));
+fprintf(fileID,'%10d',locssm46(1));
+fprintf(fileID,'%10d',locssm46(2));
+fprintf(fileID,'%10d',locssm46(3));
+fprintf(fileID,'%10f',locssm46(4));
+fprintf(fileID,'%10d',locssm46(5));
+fprintf(fileID,'%10f \n',locssm46(6));
+fprintf(fileID,'%10d',locssm47(1));
+fprintf(fileID,'%10d',locssm47(2));
+fprintf(fileID,'%10d',locssm47(3));
+fprintf(fileID,'%10f',locssm47(4));
+[Date] 145
+fprintf(fileID,'%10d',locssm47(5));
+fprintf(fileID,'%10f \n',locssm47(6));
+fprintf(fileID,'%10d',locssm48(1));
+fprintf(fileID,'%10d',locssm48(2));
+fprintf(fileID,'%10d',locssm48(3));
+fprintf(fileID,'%10f',locssm48(4));
+fprintf(fileID,'%10d',locssm48(5));
+fprintf(fileID,'%10f \n',locssm48(6));
+fprintf(fileID,'%10d',locssm49(1));
+fprintf(fileID,'%10d',locssm49(2));
+fprintf(fileID,'%10d',locssm49(3));
+fprintf(fileID,'%10f',locssm49(4));
+fprintf(fileID,'%10d',locssm49(5));
+fprintf(fileID,'%10f \n',locssm49(6));
+fprintf(fileID,'%10d',locssm410(1));
+fprintf(fileID,'%10d',locssm410(2));
+fprintf(fileID,'%10d',locssm410(3));
+fprintf(fileID,'%10f',locssm410(4));
+fprintf(fileID,'%10d',locssm410(5));
+fprintf(fileID,'%10f \n',locssm410(6));
+fprintf(fileID,'%10d',locssm411(1));
+fprintf(fileID,'%10d',locssm411(2));
+fprintf(fileID,'%10d',locssm411(3));
+fprintf(fileID,'%10f',locssm411(4));
+fprintf(fileID,'%10d',locssm411(5));
+fprintf(fileID,'%10f \n',locssm411(6));
+fprintf(fileID,'%10d',locssm412(1));
+fprintf(fileID,'%10d',locssm412(2));
+fprintf(fileID,'%10d',locssm412(3));
+fprintf(fileID,'%10f',locssm412(4));
+fprintf(fileID,'%10d',locssm412(5));
+fprintf(fileID,'%10f \n',locssm412(6));
+fprintf(fileID,'%10d',locssm413(1));
+fprintf(fileID,'%10d',locssm413(2));
+fprintf(fileID,'%10d',locssm413(3));
+fprintf(fileID,'%10f',locssm413(4));
+fprintf(fileID,'%10d',locssm413(5));
+fprintf(fileID,'%10f \n',locssm413(6));
+[Date] 146
+fprintf(fileID,'%10d',locssm414(1));
+fprintf(fileID,'%10d',locssm414(2));
+fprintf(fileID,'%10d',locssm414(3));
+fprintf(fileID,'%10f',locssm414(4));
+fprintf(fileID,'%10d',locssm414(5));
+fprintf(fileID,'%10f \n',locssm414(6));
+fprintf(fileID,'%10d',locssm415(1));
+fprintf(fileID,'%10d',locssm415(2));
+fprintf(fileID,'%10d',locssm415(3));
+fprintf(fileID,'%10f',locssm415(4));
+fprintf(fileID,'%10d',locssm415(5));
+fprintf(fileID,'%10f \n',locssm415(6));
+ fprintf(fileID, F);
+ fprintf(fileID, G);
+fprintf(fileID,'%10d',locssm51(1));
+fprintf(fileID,'%10d',locssm51(2));
+fprintf(fileID,'%10d',locssm51(3));
+fprintf(fileID,'%10f',locssm51(4));
+fprintf(fileID,'%10d',locssm51(5));
+fprintf(fileID,'%10f \n',locssm51(6));
+fprintf(fileID,'%10d',locssm52(1));
+fprintf(fileID,'%10d',locssm52(2));
+fprintf(fileID,'%10d',locssm52(3));
+fprintf(fileID,'%10f',locssm52(4));
+fprintf(fileID,'%10d',locssm52(5));
+fprintf(fileID,'%10f \n',locssm52(6));
+fprintf(fileID,'%10d',locssm53(1));
+fprintf(fileID,'%10d',locssm53(2));
+fprintf(fileID,'%10d',locssm53(3));
+fprintf(fileID,'%10f',locssm53(4));
+fprintf(fileID,'%10d',locssm53(5));
+fprintf(fileID,'%10f \n',locssm53(6));
+fprintf(fileID,'%10d',locssm54(1));
+fprintf(fileID,'%10d',locssm54(2));
+fprintf(fileID,'%10d',locssm54(3));
+fprintf(fileID,'%10f',locssm54(4));
+fprintf(fileID,'%10d',locssm54(5));
+fprintf(fileID,'%10f \n',locssm54(6));
+[Date] 147
+fprintf(fileID,'%10d',locssm55(1));
+fprintf(fileID,'%10d',locssm55(2));
+fprintf(fileID,'%10d',locssm55(3));
+fprintf(fileID,'%10f',locssm55(4));
+fprintf(fileID,'%10d',locssm55(5));
+fprintf(fileID,'%10f \n',locssm55(6));
+fprintf(fileID,'%10d',locssm56(1));
+fprintf(fileID,'%10d',locssm56(2));
+fprintf(fileID,'%10d',locssm56(3));
+fprintf(fileID,'%10f',locssm56(4));
+fprintf(fileID,'%10d',locssm56(5));
+fprintf(fileID,'%10f \n',locssm56(6));
+fprintf(fileID,'%10d',locssm57(1));
+fprintf(fileID,'%10d',locssm57(2));
+fprintf(fileID,'%10d',locssm57(3));
+fprintf(fileID,'%10f',locssm57(4));
+fprintf(fileID,'%10d',locssm57(5));
+fprintf(fileID,'%10f \n',locssm57(6));
+fprintf(fileID,'%10d',locssm58(1));
+fprintf(fileID,'%10d',locssm58(2));
+fprintf(fileID,'%10d',locssm58(3));
+fprintf(fileID,'%10f',locssm58(4));
+fprintf(fileID,'%10d',locssm58(5));
+fprintf(fileID,'%10f \n',locssm58(6));
+fprintf(fileID,'%10d',locssm59(1));
+fprintf(fileID,'%10d',locssm59(2));
+fprintf(fileID,'%10d',locssm59(3));
+fprintf(fileID,'%10f',locssm59(4));
+fprintf(fileID,'%10d',locssm59(5));
+fprintf(fileID,'%10f \n',locssm59(6));
+fprintf(fileID,'%10d',locssm510(1));
+fprintf(fileID,'%10d',locssm510(2));
+fprintf(fileID,'%10d',locssm510(3));
+fprintf(fileID,'%10f',locssm510(4));
+fprintf(fileID,'%10d',locssm510(5));
+fprintf(fileID,'%10f \n',locssm510(6));
+fprintf(fileID,'%10d',locssm511(1));
+fprintf(fileID,'%10d',locssm511(2));
+fprintf(fileID,'%10d',locssm511(3));
+[Date] 148
+fprintf(fileID,'%10f',locssm511(4));
+fprintf(fileID,'%10d',locssm511(5));
+fprintf(fileID,'%10f \n',locssm511(6));
+fprintf(fileID,'%10d',locssm512(1));
+fprintf(fileID,'%10d',locssm512(2));
+fprintf(fileID,'%10d',locssm512(3));
+fprintf(fileID,'%10f',locssm512(4));
+fprintf(fileID,'%10d',locssm512(5));
+fprintf(fileID,'%10f \n',locssm512(6));
+fprintf(fileID,'%10d',locssm513(1));
+fprintf(fileID,'%10d',locssm513(2));
+fprintf(fileID,'%10d',locssm513(3));
+fprintf(fileID,'%10f',locssm513(4));
+fprintf(fileID,'%10d',locssm513(5));
+fprintf(fileID,'%10f \n',locssm513(6));
+fprintf(fileID,'%10d',locssm514(1));
+fprintf(fileID,'%10d',locssm514(2));
+fprintf(fileID,'%10d',locssm514(3));
+fprintf(fileID,'%10f',locssm514(4));
+fprintf(fileID,'%10d',locssm514(5));
+fprintf(fileID,'%10f \n',locssm514(6));
+fprintf(fileID,'%10d',locssm515(1));
+fprintf(fileID,'%10d',locssm515(2));
+fprintf(fileID,'%10d',locssm515(3));
+fprintf(fileID,'%10f',locssm515(4));
+fprintf(fileID,'%10d',locssm515(5));
+fprintf(fileID,'%10f \n',locssm515(6));
+
+end
+system('BASE.bat')
+ fclose all ;
+ fileID = fopen('MT3D001.OBS','r');
+ for i = 1:45
+ Fobs1 = fgets(fileID);
+ end
+ locobs1 = str2num(Fobs1);
+ locobs1 = locobs1 + 0.00001 ;
+
+ fileID = fopen('MT3D001.OBS','r');
+[Date] 149
+ for i = 1:88
+ Fobs2 = fgets(fileID);
+ end
+ locobs2 = str2num(Fobs2);
+ locobs2 = locobs2 + 0.00001 ;
+
+ fileID = fopen('MT3D001.OBS','r');
+ for i = 1:131
+ Fobs3 = fgets(fileID);
+ end
+ locobs3 = str2num(Fobs3);
+ locobs3 = locobs3 + 0.00001 ;
+
+ fileID = fopen('MT3D001.OBS','r');
+ for i = 1:174
+ Fobs4 = fgets(fileID);
+ end
+ locobs4 = str2num(Fobs4);
+ locobs4 = locobs4 + 0.00001 ;
+
+ fileID = fopen('MT3D001.OBS','r');
+ for i = 1:217
+ Fobs5 = fgets(fileID);
+ end
+ locobs5 = str2num(Fobs5);
+ locobs5 = locobs5 + 0.00001 ;
+fval(ii,1) = (((locobs1(3)-
+locobs1r(3))/locobs1r(3)).^2)+(((locobs1(4)-
+locobs1r(4))/locobs1r(4)).^2)+(((locobs1(5)-
+locobs1r(5))/locobs1r(5)).^2)+(((locobs1(6)-
+locobs1r(6))/locobs1r(6)).^2)+(((locobs1(7)-
+locobs1r(7))/locobs1r(7)).^2)+(((locobs1(8)-locobs1r(8)
+)/locobs1r(8)).^2) + (((locobs2(3)-
+locobs2r(3))/locobs2r(3)).^2)+(((locobs2(4)-
+locobs2r(4))/locobs2r(4)).^2)+(((locobs2(5)-
+locobs2r(5))/locobs2r(5)).^2)+(((locobs2(6)-
+locobs2r(6))/locobs2r(6)).^2)+(((locobs2(7)-
+locobs2r(7))/locobs2r(7)).^2)+(((locobs2(8)-locobs2r(8)
+)/locobs2r(8) ).^2) + (((locobs3(3)-
+locobs3r(3))/locobs3r(3)).^2)+(((locobs3(4)-
+locobs3r(4))/locobs3r(4)).^2)+(((locobs3(5)-
+locobs3r(5))/locobs3r(5)).^2)+(((locobs3(6)-
+locobs3r(6))/locobs3r(6)).^2)+(((locobs3(7)-
+locobs3r(7))/locobs3r(7)).^2)+(((locobs3(8)-locobs3r(8)
+)/locobs3r(8) ).^2) + (((locobs4(3)-
+[Date] 150
+locobs4r(3))/locobs4r(3)).^2)+(((locobs4(4)-
+locobs4r(4))/locobs4r(4)).^2)+(((locobs4(5)-
+locobs4r(5))/locobs4r(5)).^2)+(((locobs4(6)-
+locobs4r(6))/locobs4r(6)).^2)+(((locobs4(7)-
+locobs4r(7))/locobs4r(7)).^2)+(((locobs4(8)-locobs4r(8)
+)/locobs4r(8) ).^2)+ (((locobs5(3)-
+locobs5r(3))/locobs5r(3)).^2)+(((locobs5(4)-
+locobs5r(4))/locobs5r(4)).^2)+(((locobs5(5)-
+locobs5r(5))/locobs5r(5)).^2)+(((locobs5(6)-
+locobs5r(6))/locobs5r(6)).^2)+(((locobs5(7)-
+locobs5r(7))/locobs5r(7)).^2)+(((locobs5(8)-locobs5r(8)
+)/locobs5r(8) ).^2);
+ end
+ fclose all ;
+ % compare the function values to find the best ones
+ for ii = 1:swarm_size
+ if fval(ii,1) < swarm(ii,4,1)
+ swarm(ii, 3, 1) = swarm(ii, 1, 1);
+ swarm(ii, 3, 2) = swarm(ii, 1, 2);
+ swarm(ii, 3, 3) = swarm(ii, 1, 3);
+ swarm(ii, 3, 4) = swarm(ii, 1, 4);
+ swarm(ii, 3, 5) = swarm(ii, 1, 5);
+ swarm(ii, 3, 6) = swarm(ii, 1, 6);
+ swarm(ii, 3, 7) = swarm(ii, 1, 7);
+ swarm(ii, 3, 8) = swarm(ii, 1, 8);
+ swarm(ii, 3, 9) = swarm(ii, 1, 9);
+ swarm(ii, 3, 10) = swarm(ii, 1, 10);
+ swarm(ii, 3, 11) = swarm(ii, 1, 11);
+ swarm(ii, 3, 12) = swarm(ii, 1, 12);
+ swarm(ii, 3, 13) = swarm(ii, 1, 13);
+ swarm(ii, 3, 14) = swarm(ii, 1, 14);
+ swarm(ii, 3, 15) = swarm(ii, 1, 15);
+ swarm(ii, 3, 16) = swarm(ii, 1, 16);
+ swarm(ii, 3, 17) = swarm(ii, 1, 17);
+ swarm(ii, 3, 18) = swarm(ii, 1, 18);
+ swarm(ii, 3, 19) = swarm(ii, 1, 19);
+ swarm(ii, 3, 20) = swarm(ii, 1, 20);
+ swarm(ii, 3, 21) = swarm(ii, 1, 21);
+ swarm(ii, 3, 22) = swarm(ii, 1, 22);
+ swarm(ii, 3, 23) = swarm(ii, 1, 23);
+ swarm(ii, 3, 24) = swarm(ii, 1, 24);
+ swarm(ii, 3, 25) = swarm(ii, 1, 25);
+ swarm(ii, 3, 26) = swarm(ii, 1, 26);
+ swarm(ii, 3, 27) = swarm(ii, 1, 27);
+ swarm(ii, 3, 28) = swarm(ii, 1, 28);
+ swarm(ii, 3, 29) = swarm(ii, 1, 29);
+[Date] 151
+ swarm(ii, 3, 30) = swarm(ii, 1, 30);
+ swarm(ii, 3, 31) = swarm(ii, 1, 31);
+ swarm(ii, 3, 32) = swarm(ii, 1, 32);
+ swarm(ii, 3, 33) = swarm(ii, 1, 33);
+ swarm(ii, 3, 34) = swarm(ii, 1, 34);
+ swarm(ii, 3, 35) = swarm(ii, 1, 35);
+ swarm(ii, 3, 36) = swarm(ii, 1, 36);
+ swarm(ii, 3, 37) = swarm(ii, 1, 37);
+ swarm(ii, 3, 38) = swarm(ii, 1, 38);
+ swarm(ii, 3, 39) = swarm(ii, 1, 39);
+ swarm(ii, 3, 40) = swarm(ii, 1, 40);
+ swarm(ii, 3, 41) = swarm(ii, 1, 41);
+ swarm(ii, 3, 42) = swarm(ii, 1, 42);
+ swarm(ii, 3, 43) = swarm(ii, 1, 43);
+ swarm(ii, 3, 44) = swarm(ii, 1, 44);
+ swarm(ii, 3, 45) = swarm(ii, 1, 45);
+ swarm(ii, 3, 46) = swarm(ii, 1, 46);
+ swarm(ii, 3, 47) = swarm(ii, 1, 47);
+ swarm(ii, 3, 48) = swarm(ii, 1, 48);
+ swarm(ii, 3, 49) = swarm(ii, 1, 49);
+ swarm(ii, 3, 50) = swarm(ii, 1, 50);
+ swarm(ii, 3, 51) = swarm(ii, 1, 51);
+ swarm(ii, 3, 52) = swarm(ii, 1, 52);
+ swarm(ii, 3, 53) = swarm(ii, 1, 53);
+ swarm(ii, 3, 54) = swarm(ii, 1, 54);
+ swarm(ii, 3, 55) = swarm(ii, 1, 55);
+ swarm(ii, 3, 56) = swarm(ii, 1, 56);
+ swarm(ii, 3, 57) = swarm(ii, 1, 57);
+ swarm(ii, 3, 58) = swarm(ii, 1, 58);
+ swarm(ii, 3, 59) = swarm(ii, 1, 59);
+ swarm(ii, 3, 60) = swarm(ii, 1, 60);
+
+
+ swarm(:, 3, 61) = swarm(:, 1, 61);
+ swarm(:, 3, 62) = swarm(:, 1, 62);
+ swarm(:, 3, 63) = swarm(:, 1, 63);
+ swarm(:, 3, 64) = swarm(:, 1, 64);
+ swarm(:, 3, 65) = swarm(:, 1, 65);
+ swarm(:, 3, 66) = swarm(:, 1, 66);
+ swarm(:, 3, 67) = swarm(:, 1, 67);
+ swarm(:, 3, 68) = swarm(:, 1, 68);
+ swarm(:, 3, 69) = swarm(:, 1, 69);
+ swarm(:, 3, 70) = swarm(:, 1, 70);
+ swarm(:, 3, 71) = swarm(:, 1, 71);
+ swarm(:, 3, 72) = swarm(:, 1, 72);
+ swarm(:, 3, 73) = swarm(:, 1, 73);
+ swarm(:, 3, 74) = swarm(:, 1, 74);
+[Date] 152
+ swarm(:, 3, 75) = swarm(:, 1, 75);
+ swarm(:, 3, 76) = swarm(:, 1, 76);
+ swarm(:, 3, 77) = swarm(:, 1, 77);
+ swarm(:, 3, 78) = swarm(:, 1, 78);
+ swarm(:, 3, 79) = swarm(:, 1, 79);
+ swarm(:, 3, 80) = swarm(:, 1, 80);
+ swarm(:, 3, 81) = swarm(:, 1, 81);
+ swarm(:, 3, 82) = swarm(:, 1, 82);
+ swarm(:, 3, 83) = swarm(:, 1, 83);
+ swarm(:, 3, 84) = swarm(:, 1, 84);
+ swarm(:, 3, 85) = swarm(:, 1, 85);
+ swarm(:, 3, 86) = swarm(:, 1, 86);
+ swarm(:, 3, 87) = swarm(:, 1, 87);
+ swarm(:, 3, 88) = swarm(:, 1, 88);
+ swarm(:, 3, 89) = swarm(:, 1, 89);
+ swarm(:, 3, 90) = swarm(:, 1, 90);
+ swarm(:, 3, 91) = swarm(:, 1, 91);
+ swarm(:, 3, 92) = swarm(:, 1, 92);
+ swarm(:, 3, 93) = swarm(:, 1, 93);
+ swarm(:, 3, 94) = swarm(:, 1, 94);
+ swarm(:, 3, 95) = swarm(:, 1, 95);
+ swarm(:, 3, 96) = swarm(:, 1, 96);
+ swarm(:, 3, 97) = swarm(:, 1, 97);
+ swarm(:, 3, 98) = swarm(:, 1, 98);
+ swarm(:, 3, 99) = swarm(:, 1, 99);
+ swarm(:, 3, 100) = swarm(:, 1, 100);
+ swarm(:, 3, 101) = swarm(:, 1, 101);
+ swarm(:, 3, 102) = swarm(:, 1, 102);
+ swarm(:, 3, 103) = swarm(:, 1, 103);
+ swarm(:, 3, 104) = swarm(:, 1, 104);
+ swarm(:, 3, 105) = swarm(:, 1, 105);
+ swarm(:, 3, 106) = swarm(:, 1, 106);
+ swarm(:, 3, 107) = swarm(:, 1, 107);
+ swarm(:, 3, 108) = swarm(:, 1, 108);
+ swarm(:, 3, 109) = swarm(:, 1, 109);
+ swarm(:, 3, 110) = swarm(:, 1, 110);
+ swarm(:, 3, 111) = swarm(:, 1, 111);
+ swarm(:, 3, 112) = swarm(:, 1, 112);
+ swarm(:, 3, 113) = swarm(:, 1, 113);
+ swarm(:, 3, 114) = swarm(:, 1, 114);
+ swarm(:, 3, 115) = swarm(:, 1, 115);
+ swarm(:, 3, 116) = swarm(:, 1, 116);
+ swarm(:, 3, 117) = swarm(:, 1, 117);
+ swarm(:, 3, 118) = swarm(:, 1, 118);
+ swarm(:, 3, 119) = swarm(:, 1, 119);
+ swarm(:, 3, 120) = swarm(:, 1, 120);
+
+[Date] 153
+ swarm(ii, 4, 1) = fval(ii,1);
+% update the best value so far
+ end
+ end
+
+ [fvalb, gbest] = min(swarm(:, 4, 1));
+% find the best function value in total
+
+ % update the velocity of the particles
+ swarm(:, 2, 1) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+1)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 1) -
+swarm(:, 1, 1))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 1) -
+swarm(:, 1, 1)));
+ swarm(:, 2, 2) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+2)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 2) -
+swarm(:, 1, 2))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 2) -
+swarm(:, 1, 2)));
+ swarm(:, 2, 3) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+3)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 3) -
+swarm(:, 1, 3))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 3) -
+swarm(:, 1, 3)));
+ swarm(:, 2, 4) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+4)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 4) -
+swarm(:, 1, 4))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 4) -
+swarm(:, 1, 4)));
+ swarm(:, 2, 5) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+5)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 5) -
+swarm(:, 1, 5))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 5) -
+swarm(:, 1, 5)));
+ swarm(:, 2, 6) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+6)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 6) -
+swarm(:, 1, 6))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 6) -
+swarm(:, 1, 6)));
+ swarm(:, 2, 7) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+7)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 7) -
+swarm(:, 1, 7))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 7) -
+swarm(:, 1, 7)));
+ swarm(:, 2, 8) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+8)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 8) -
+swarm(:, 1, 8))) +
+[Date] 154
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 8) -
+swarm(:, 1, 8)));
+ swarm(:, 2, 9) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+9)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 9) -
+swarm(:, 1, 9))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 9) -
+swarm(:, 1, 9)));
+ swarm(:, 2, 10) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+10)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 10) -
+swarm(:, 1, 10))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 10) -
+swarm(:, 1, 10)));
+ swarm(:, 2, 11) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+11)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 11) -
+swarm(:, 1, 11))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 11) -
+swarm(:, 1, 11)));
+ swarm(:, 2, 12) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+12)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 12) -
+swarm(:, 1, 12))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 12) -
+swarm(:, 1, 12)));
+ swarm(:, 2, 13) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+13)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 13) -
+swarm(:, 1, 13))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 13) -
+swarm(:, 1, 13)));
+ swarm(:, 2, 14) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+14)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 14) -
+swarm(:, 1, 14))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 14) -
+swarm(:, 1, 14)));
+ swarm(:, 2, 15) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+15)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 15) -
+swarm(:, 1, 15))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 15) -
+swarm(:, 1, 15)));
+ swarm(:, 2, 16) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+16)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 16) -
+swarm(:, 1, 16))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 16) -
+swarm(:, 1, 16)));
+ swarm(:, 2, 17) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+17)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 17) -
+swarm(:, 1, 17))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 17) -
+swarm(:, 1, 17)));
+[Date] 155
+ swarm(:, 2, 18) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+18)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 18) -
+swarm(:, 1, 18))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 18) -
+swarm(:, 1, 18)));
+ swarm(:, 2, 19) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+19)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 19) -
+swarm(:, 1, 19))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 19) -
+swarm(:, 1, 19)));
+ swarm(:, 2, 20) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+20)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 20) -
+swarm(:, 1, 20))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 20) -
+swarm(:, 1, 20)));
+ swarm(:, 2, 21) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+21)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 21) -
+swarm(:, 1, 21))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 21) -
+swarm(:, 1, 21)));
+ swarm(:, 2, 22) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+22)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 22) -
+swarm(:, 1, 22))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 22) -
+swarm(:, 1, 22)));
+ swarm(:, 2, 23) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+23)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 23) -
+swarm(:, 1, 23))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 23) -
+swarm(:, 1, 23)));
+ swarm(:, 2, 24) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+24)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 24) -
+swarm(:, 1, 24))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 24) -
+swarm(:, 1, 24)));
+ swarm(:, 2, 25) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+25)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 25) -
+swarm(:, 1, 25))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 25) -
+swarm(:, 1, 25)));
+ swarm(:, 2, 26) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+26)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 26) -
+swarm(:, 1, 26))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 26) -
+swarm(:, 1, 26)));
+ swarm(:, 2, 27) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+27)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 27) -
+[Date] 156
+swarm(:, 1, 27))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 27) -
+swarm(:, 1, 27)));
+ swarm(:, 2, 28) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+28)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 28) -
+swarm(:, 1, 28))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 28) -
+swarm(:, 1, 28)));
+ swarm(:, 2, 29) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+29)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 29) -
+swarm(:, 1, 29))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 29) -
+swarm(:, 1, 29)));
+ swarm(:, 2, 30) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+30)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 30) -
+swarm(:, 1, 30))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 30) -
+swarm(:, 1, 30)));
+ swarm(:, 2, 31) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+31)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 31) -
+swarm(:, 1, 31))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 31) -
+swarm(:, 1, 31)));
+ swarm(:, 2, 32) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+32)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 32) -
+swarm(:, 1, 32))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 32) -
+swarm(:, 1, 32)));
+ swarm(:, 2, 33) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+33)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 33) -
+swarm(:, 1, 33))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 33) -
+swarm(:, 1, 33)));
+ swarm(:, 2, 34) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+34)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 34) -
+swarm(:, 1, 34))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 34) -
+swarm(:, 1, 34)));
+ swarm(:, 2, 35) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+35)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 35) -
+swarm(:, 1, 35))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 35) -
+swarm(:, 1, 35)));
+ swarm(:, 2, 36) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+36)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 36) -
+swarm(:, 1, 36))) +
+[Date] 157
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 36) -
+swarm(:, 1, 36)));
+ swarm(:, 2, 37) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+37)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 37) -
+swarm(:, 1, 37))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 37) -
+swarm(:, 1, 37)));
+ swarm(:, 2, 38) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+38)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 38) -
+swarm(:, 1, 38))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 38) -
+swarm(:, 1, 38)));
+ swarm(:, 2, 39) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+39)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 39) -
+swarm(:, 1, 39))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 39) -
+swarm(:, 1, 39)));
+ swarm(:, 2, 40) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+40)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 40) -
+swarm(:, 1, 40))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 40) -
+swarm(:, 1, 40)));
+ swarm(:, 2, 41) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+41)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 41) -
+swarm(:, 1, 41))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 41) -
+swarm(:, 1, 41)));
+ swarm(:, 2, 42) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+42)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 42) -
+swarm(:, 1, 42))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 42) -
+swarm(:, 1, 42)));
+ swarm(:, 2, 43) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+43)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 43) -
+swarm(:, 1, 43))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 43) -
+swarm(:, 1, 43)));
+ swarm(:, 2, 44) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+44)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 44) -
+swarm(:, 1, 44))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 44) -
+swarm(:, 1, 44)));
+ swarm(:, 2, 45) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+45)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 45) -
+swarm(:, 1, 45))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 45) -
+swarm(:, 1, 45)));
+[Date] 158
+ swarm(:, 2, 46) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+46)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 46) -
+swarm(:, 1, 46))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 46) -
+swarm(:, 1, 46)));
+ swarm(:, 2, 47) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+47)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 47) -
+swarm(:, 1, 47))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 47) -
+swarm(:, 1, 47)));
+ swarm(:, 2, 48) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+48)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 48) -
+swarm(:, 1, 48))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 48) -
+swarm(:, 1, 48)));
+ swarm(:, 2, 49) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+49)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 49) -
+swarm(:, 1, 49))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 49) -
+swarm(:, 1, 49)));
+ swarm(:, 2, 50) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+50)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 50) -
+swarm(:, 1, 50))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 50) -
+swarm(:, 1, 50)));
+ swarm(:, 2, 51) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+51)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 51) -
+swarm(:, 1, 51))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 51) -
+swarm(:, 1, 51)));
+ swarm(:, 2, 52) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+52)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 52) -
+swarm(:, 1, 52))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 52) -
+swarm(:, 1, 52)));
+ swarm(:, 2, 53) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+53)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 53) -
+swarm(:, 1, 53))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 53) -
+swarm(:, 1, 53)));
+ swarm(:, 2, 54) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+54)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 54) -
+swarm(:, 1, 54))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 54) -
+swarm(:, 1, 54)));
+ swarm(:, 2, 55) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+55)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 55) -
+[Date] 159
+swarm(:, 1, 55))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 55) -
+swarm(:, 1, 55)));
+ swarm(:, 2, 56) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+56)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 56) -
+swarm(:, 1, 56))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 56) -
+swarm(:, 1, 56)));
+ swarm(:, 2, 57) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+57)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 57) -
+swarm(:, 1, 57))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 57) -
+swarm(:, 1, 57)));
+ swarm(:, 2, 58) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+58)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 58) -
+swarm(:, 1, 58))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 58) -
+swarm(:, 1, 58)));
+ swarm(:, 2, 59) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+59)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 59) -
+swarm(:, 1, 59))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 59) -
+swarm(:, 1, 59)));
+ swarm(:, 2, 60) = inertia*(rand(swarm_size,1).*swarm(:, 2,
+60)) + correction_factor*(rand(swarm_size,1).*(swarm(:, 3, 60) -
+swarm(:, 1, 60))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, 60) -
+swarm(:, 1, 60)));
+
+ for refvel = 60:120
+ swarm(:, 2, refvel) = inertia*(rand(swarm_size,1).*swarm(:,
+2, refvel)) + correction_factor*(rand(swarm_size,1).*(swarm(:,
+3, refvel) - swarm(:, 1, refvel))) +
+correction_factor*(rand(swarm_size,1).*(swarm(gbest, 3, refvel)
+- swarm(:, 1, refvel)));
+ end
+
+ plot the particles
+ close all ;
+ clf;
+
+
+ figure(1)
+ plot(5,6, 'kd');
+ text(5,6,'C = 0');
+[Date] 160
+ hold on
+ plot(8,13, 'kd');
+ text(8,13,'C = 0');
+ plot(15,8, 'kd');
+ text(15,8,'C = 10');
+ i = gbest ;
+ plot(swarm(i, 1, 1), swarm(i, 1, 2), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 4))];
+ text(swarm(i, 1, 1), swarm(i, 1, 2),strmin);
+
+ plot(swarm(i, 1, 5), swarm(i, 1, 6), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 8))];
+ text(swarm(i, 1, 5), swarm(i, 1, 6),strmin);
+
+ plot(swarm(i, 1, 9), swarm(i, 1, 10), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 12))];
+ text(swarm(i, 1, 9), swarm(i, 1, 10),strmin);
+
+ plot(swarm(i, 1, 13), swarm(i, 1, 14), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 16))];
+ text(swarm(i, 1, 13), swarm(i, 1, 14),strmin);
+
+ plot(swarm(i, 1, 17), swarm(i, 1, 18), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 20))];
+ text(swarm(i, 1, 17), swarm(i, 1, 18),strmin);
+
+ plot(swarm(i, 1, 21), swarm(i, 1, 22), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 24))];
+ text(swarm(i, 1, 21), swarm(i, 1, 22),strmin);
+
+ plot(swarm(i, 1, 25), swarm(i, 1, 26), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 28))];
+ text(swarm(i, 1, 25), swarm(i, 1, 26),strmin);
+
+ plot(swarm(i, 1, 29), swarm(i, 1, 30), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 32))];
+ text(swarm(i, 1, 29), swarm(i, 1, 30),strmin);
+[Date] 161
+
+ plot(swarm(i, 1, 33), swarm(i, 1, 34), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 36))];
+ text(swarm(i, 1, 33), swarm(i, 1, 34),strmin);
+
+ plot(swarm(i, 1, 37), swarm(i, 1, 38), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 40))];
+ text(swarm(i, 1, 37), swarm(i, 1, 38),strmin);
+
+ plot(swarm(i, 1, 41), swarm(i, 1, 42), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 44))];
+ text(swarm(i, 1, 41), swarm(i, 1, 42),strmin);
+
+ plot(swarm(i, 1, 45), swarm(i, 1, 46), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 48))];
+ text(swarm(i, 1, 45), swarm(i, 1, 46),strmin);
+
+ plot(swarm(i, 1, 49), swarm(i, 1, 50), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 52))];
+ text(swarm(i, 1, 49), swarm(i, 1, 50),strmin);
+
+ plot(swarm(i, 1, 53), swarm(i, 1, 54), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 56))];
+ text(swarm(i, 1, 53), swarm(i, 1, 54),strmin);
+
+ plot(swarm(i, 1, 57), swarm(i, 1, 58), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 60))];
+ text(swarm(i, 1, 57), swarm(i, 1, 58),strmin);
+
+ strmin = ['Fval = ',num2str(fvalb)];
+ text(1,20,strmin);
+ strmin = ['Iter = ',num2str(iter)];
+ text(1,19,strmin);
+
+ plot(13,10, 'gd');
+ plot(6,8, 'gd');
+ plot(9,12, 'gd');
+[Date] 162
+ plot(9,9, 'gd');
+ plot(10,11, 'gd');
+ plot(11,1, 'gd');
+ axis([0 Xmax+1 0 Ymax+1]);
+
+ pause(.1);
+figure(2)
+ plot(5,6, 'kd');
+ text(5,6,'C = 0');
+ hold on
+ plot(8,13, 'kd');
+ text(8,13,'C = 0');
+ plot(15,8, 'kd');
+ text(15,8,'C = 20');
+ i = gbest ;
+ plot(swarm(i, 1, 1), swarm(i, 1, 2), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 61))];
+ text(swarm(i, 1, 1), swarm(i, 1, 2),strmin);
+
+ plot(swarm(i, 1, 5), swarm(i, 1, 6), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 65))];
+ text(swarm(i, 1, 5), swarm(i, 1, 6),strmin);
+
+ plot(swarm(i, 1, 9), swarm(i, 1, 10), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 69))];
+ text(swarm(i, 1, 9), swarm(i, 1, 10),strmin);
+
+ plot(swarm(i, 1, 13), swarm(i, 1, 14), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 73))];
+ text(swarm(i, 1, 13), swarm(i, 1, 14),strmin);
+
+[Date] 163
+ plot(swarm(i, 1, 17), swarm(i, 1, 18), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 77))];
+ text(swarm(i, 1, 17), swarm(i, 1, 18),strmin);
+
+ plot(swarm(i, 1, 21), swarm(i, 1, 22), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 81))];
+ text(swarm(i, 1, 21), swarm(i, 1, 22),strmin);
+
+ plot(swarm(i, 1, 25), swarm(i, 1, 26), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 85))];
+ text(swarm(i, 1, 25), swarm(i, 1, 26),strmin);
+
+ plot(swarm(i, 1, 29), swarm(i, 1, 30), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 89))];
+ text(swarm(i, 1, 29), swarm(i, 1, 30),strmin);
+
+ plot(swarm(i, 1, 33), swarm(i, 1, 34), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 93))];
+ text(swarm(i, 1, 33), swarm(i, 1, 34),strmin);
+
+ plot(swarm(i, 1, 37), swarm(i, 1, 38), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 97))];
+ text(swarm(i, 1, 37), swarm(i, 1, 38),strmin);
+
+ plot(swarm(i, 1, 41), swarm(i, 1, 42), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 44))];
+ text(swarm(i, 1, 41), swarm(i, 1, 42),strmin);
+
+ plot(swarm(i, 1, 45), swarm(i, 1, 46), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 48))];
+ text(swarm(i, 1, 45), swarm(i, 1, 46),strmin);
+
+ plot(swarm(i, 1, 49), swarm(i, 1, 50), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 52))];
+ text(swarm(i, 1, 49), swarm(i, 1, 50),strmin);
+[Date] 164
+
+ plot(swarm(i, 1, 53), swarm(i, 1, 54), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 56))];
+ text(swarm(i, 1, 53), swarm(i, 1, 54),strmin);
+
+ plot(swarm(i, 1, 57), swarm(i, 1, 58), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 60))];
+ text(swarm(i, 1, 57), swarm(i, 1, 58),strmin);
+
+ strmin = ['Fval = ',num2str(fvalb)];
+ text(1,20,strmin);
+ strmin = ['Iter = ',num2str(iter)];
+ text(1,19,strmin);
+
+ plot(13,10, 'gd');
+ plot(6,8, 'gd');
+ plot(9,12, 'gd');
+ plot(9,9, 'gd');
+ plot(10,11, 'gd');
+ plot(11,1, 'gd');
+ axis([0 Xmax+1 0 Ymax+1]);
+
+
+
+
+
+figure(3)
+ plot(5,6, 'kd');
+ text(5,6,'C = 25');
+ hold on
+ plot(8,13, 'kd');
+ text(8,13,'C = 25');
+ plot(15,8, 'kd');
+ text(15,8,'C = 50');
+ i = gbest ;
+ plot(swarm(i, 1, 1), swarm(i, 1, 2), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 62))];
+ text(swarm(i, 1, 1), swarm(i, 1, 2),strmin);
+[Date] 165
+
+ plot(swarm(i, 1, 5), swarm(i, 1, 6), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 66))];
+ text(swarm(i, 1, 5), swarm(i, 1, 6),strmin);
+
+ plot(swarm(i, 1, 9), swarm(i, 1, 10), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 70))];
+ text(swarm(i, 1, 9), swarm(i, 1, 10),strmin);
+
+ plot(swarm(i, 1, 13), swarm(i, 1, 14), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 74))];
+ text(swarm(i, 1, 13), swarm(i, 1, 14),strmin);
+
+ plot(swarm(i, 1, 17), swarm(i, 1, 18), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 78))];
+ text(swarm(i, 1, 17), swarm(i, 1, 18),strmin);
+
+ plot(swarm(i, 1, 21), swarm(i, 1, 22), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 82))];
+ text(swarm(i, 1, 21), swarm(i, 1, 22),strmin);
+
+ plot(swarm(i, 1, 25), swarm(i, 1, 26), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 86))];
+ text(swarm(i, 1, 25), swarm(i, 1, 26),strmin);
+
+ plot(swarm(i, 1, 29), swarm(i, 1, 30), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 90))];
+ text(swarm(i, 1, 29), swarm(i, 1, 30),strmin);
+
+ plot(swarm(i, 1, 33), swarm(i, 1, 34), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 94))];
+ text(swarm(i, 1, 33), swarm(i, 1, 34),strmin);
+
+ plot(swarm(i, 1, 37), swarm(i, 1, 38), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 98))];
+[Date] 166
+ text(swarm(i, 1, 37), swarm(i, 1, 38),strmin);
+
+ plot(swarm(i, 1, 41), swarm(i, 1, 42), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 44))];
+ text(swarm(i, 1, 41), swarm(i, 1, 42),strmin);
+
+ plot(swarm(i, 1, 45), swarm(i, 1, 46), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 48))];
+ text(swarm(i, 1, 45), swarm(i, 1, 46),strmin);
+
+ plot(swarm(i, 1, 49), swarm(i, 1, 50), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 52))];
+ text(swarm(i, 1, 49), swarm(i, 1, 50),strmin);
+
+ plot(swarm(i, 1, 53), swarm(i, 1, 54), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 56))];
+ text(swarm(i, 1, 53), swarm(i, 1, 54),strmin);
+
+ plot(swarm(i, 1, 57), swarm(i, 1, 58), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 60))];
+ text(swarm(i, 1, 57), swarm(i, 1, 58),strmin);
+
+ strmin = ['Fval = ',num2str(fvalb)];
+ text(1,20,strmin);
+ strmin = ['Iter = ',num2str(iter)];
+ text(1,19,strmin);
+
+ plot(13,10, 'gd');
+ plot(6,8, 'gd');
+ plot(9,12, 'gd');
+ plot(9,9, 'gd');
+ plot(10,11, 'gd');
+ plot(11,1, 'gd');
+ axis([0 Xmax+1 0 Ymax+1]);
+
+
+
+[Date] 167
+
+
+figure(4)
+ plot(5,6, 'kd');
+ text(5,6,'C = 75');
+ hold on
+ plot(8,13, 'kd');
+ text(8,13,'C = 75');
+ plot(15,8, 'kd');
+ text(15,8,'C = 75');
+ i = gbest ;
+ plot(swarm(i, 1, 1), swarm(i, 1, 2), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 63))];
+ text(swarm(i, 1, 1), swarm(i, 1, 2),strmin);
+
+ plot(swarm(i, 1, 5), swarm(i, 1, 6), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 67))];
+ text(swarm(i, 1, 5), swarm(i, 1, 6),strmin);
+
+ plot(swarm(i, 1, 9), swarm(i, 1, 10), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 71))];
+ text(swarm(i, 1, 9), swarm(i, 1, 10),strmin);
+
+ plot(swarm(i, 1, 13), swarm(i, 1, 14), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 75))];
+ text(swarm(i, 1, 13), swarm(i, 1, 14),strmin);
+
+ plot(swarm(i, 1, 17), swarm(i, 1, 18), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 79))];
+ text(swarm(i, 1, 17), swarm(i, 1, 18),strmin);
+
+ plot(swarm(i, 1, 21), swarm(i, 1, 22), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 83))];
+ text(swarm(i, 1, 21), swarm(i, 1, 22),strmin);
+
+ plot(swarm(i, 1, 25), swarm(i, 1, 26), 'rx'); %
+drawing swarm movements
+[Date] 168
+ strmin = ['C = ',num2str(swarm(i, 1, 87))];
+ text(swarm(i, 1, 25), swarm(i, 1, 26),strmin);
+
+ plot(swarm(i, 1, 29), swarm(i, 1, 30), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 91))];
+ text(swarm(i, 1, 29), swarm(i, 1, 30),strmin);
+
+ plot(swarm(i, 1, 33), swarm(i, 1, 34), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 95))];
+ text(swarm(i, 1, 33), swarm(i, 1, 34),strmin);
+
+ plot(swarm(i, 1, 37), swarm(i, 1, 38), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 99))];
+ text(swarm(i, 1, 37), swarm(i, 1, 38),strmin);
+
+ plot(swarm(i, 1, 41), swarm(i, 1, 42), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 44))];
+ text(swarm(i, 1, 41), swarm(i, 1, 42),strmin);
+
+ plot(swarm(i, 1, 45), swarm(i, 1, 46), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 48))];
+ text(swarm(i, 1, 45), swarm(i, 1, 46),strmin);
+
+ plot(swarm(i, 1, 49), swarm(i, 1, 50), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 52))];
+ text(swarm(i, 1, 49), swarm(i, 1, 50),strmin);
+
+ plot(swarm(i, 1, 53), swarm(i, 1, 54), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 56))];
+ text(swarm(i, 1, 53), swarm(i, 1, 54),strmin);
+
+ plot(swarm(i, 1, 57), swarm(i, 1, 58), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 60))];
+ text(swarm(i, 1, 57), swarm(i, 1, 58),strmin);
+
+ strmin = ['Fval = ',num2str(fvalb)];
+[Date] 169
+ text(1,20,strmin);
+ strmin = ['Iter = ',num2str(iter)];
+ text(1,19,strmin);
+
+ plot(13,10, 'gd');
+ plot(6,8, 'gd');
+ plot(9,12, 'gd');
+ plot(9,9, 'gd');
+ plot(10,11, 'gd');
+ plot(11,1, 'gd');
+ axis([0 Xmax+1 0 Ymax+1]);
+
+ disp(['iteration: ' num2str(iter)]);
+figure(5)
+ plot(5,6, 'kd');
+ text(5,6,'C = 75');
+ hold on
+ plot(8,13, 'kd');
+ text(8,13,'C = 75');
+ plot(15,8, 'kd');
+ text(15,8,'C = 75');
+ i = gbest ;
+ plot(swarm(i, 1, 1), swarm(i, 1, 2), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 64))];
+ text(swarm(i, 1, 1), swarm(i, 1, 2),strmin);
+
+ plot(swarm(i, 1, 5), swarm(i, 1, 6), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 68))];
+ text(swarm(i, 1, 5), swarm(i, 1, 6),strmin);
+
+ plot(swarm(i, 1, 9), swarm(i, 1, 10), 'rx'); %
+drawing swarm movements
+[Date] 170
+ strmin = ['C = ',num2str(swarm(i, 1, 72))];
+ text(swarm(i, 1, 9), swarm(i, 1, 10),strmin);
+
+ plot(swarm(i, 1, 13), swarm(i, 1, 14), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 76))];
+ text(swarm(i, 1, 13), swarm(i, 1, 14),strmin);
+
+ plot(swarm(i, 1, 17), swarm(i, 1, 18), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 80))];
+ text(swarm(i, 1, 17), swarm(i, 1, 18),strmin);
+
+ plot(swarm(i, 1, 21), swarm(i, 1, 22), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 84))];
+ text(swarm(i, 1, 21), swarm(i, 1, 22),strmin);
+
+ plot(swarm(i, 1, 25), swarm(i, 1, 26), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 88))];
+ text(swarm(i, 1, 25), swarm(i, 1, 26),strmin);
+
+ plot(swarm(i, 1, 29), swarm(i, 1, 30), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 92))];
+ text(swarm(i, 1, 29), swarm(i, 1, 30),strmin);
+
+ plot(swarm(i, 1, 33), swarm(i, 1, 34), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 96))];
+ text(swarm(i, 1, 33), swarm(i, 1, 34),strmin);
+
+ plot(swarm(i, 1, 37), swarm(i, 1, 38), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 100))];
+ text(swarm(i, 1, 37), swarm(i, 1, 38),strmin);
+
+ plot(swarm(i, 1, 41), swarm(i, 1, 42), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 44))];
+ text(swarm(i, 1, 41), swarm(i, 1, 42),strmin);
+
+[Date] 171
+ plot(swarm(i, 1, 45), swarm(i, 1, 46), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 48))];
+ text(swarm(i, 1, 45), swarm(i, 1, 46),strmin);
+
+ plot(swarm(i, 1, 49), swarm(i, 1, 50), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 52))];
+ text(swarm(i, 1, 49), swarm(i, 1, 50),strmin);
+
+ plot(swarm(i, 1, 53), swarm(i, 1, 54), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 56))];
+ text(swarm(i, 1, 53), swarm(i, 1, 54),strmin);
+
+ plot(swarm(i, 1, 57), swarm(i, 1, 58), 'rx'); %
+drawing swarm movements
+ strmin = ['C = ',num2str(swarm(i, 1, 60))];
+ text(swarm(i, 1, 57), swarm(i, 1, 58),strmin);
+
+ strmin = ['Fval = ',num2str(fvalb)];
+ text(1,20,strmin);
+ strmin = ['Iter = ',num2str(iter)];
+ text(1,19,strmin);
+
+ plot(13,10, 'gd');
+ plot(6,8, 'gd');
+ plot(9,12, 'gd');
+ plot(9,9, 'gd');
+ plot(10,11, 'gd');
+ plot(11,1, 'gd');
+ axis([0 Xmax+1 0 Ymax+1]);
+
+
+
+
+
+strmin = ['5fig ',num2str(iter)];
+savefig(figure(),strmin);
+clf;
+[Date] 172
+fclose all ;
+fileID = fopen('Result.txt','w');
+for i = 1:swarm_size
+fprintf(fileID,'%10d \n',swarm(i,4,1));
+end
+fprintf(fileID,'%10d \n',iter);
+fprintf(fileID,'%10d \n',fvalb);
+fclose all ;
+fclose all ;
+strmin = ['Resultb ',num2str(iter),'.txt'];
+fileID = fopen(strmin,'w');
+ for i = 1:120
+fprintf(fileID,'%10d \n',swarm(gbest,1,i));
+ end
+fclose all;
+fclose all ;
+strmin = ['Resultall ',num2str(iter),'.txt'];
+fileID = fopen(strmin,'w');
+
+ for j = 1:swarm_size
+ for i = 1:120
+fprintf(fileID,'%10d \n',swarm(j,1,i));
+ end
+ end
+fclose all;
+end
+% toc
